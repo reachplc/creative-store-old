@@ -1,0 +1,388 @@
+/*  --  base/_typography.less  --  */
+
+//
+//  1. Prevent iOS text size adjust after orientation change, without disabling user zoom.
+//
+
+html {
+  -ms-text-size-adjust: 100%;  // 1
+  -webkit-text-size-adjust: 100%;  // 1
+}
+
+//
+//  Address `font-family` inconsistency between `textarea` and other form elements.
+//
+
+html,
+button,
+input,
+select,
+textarea {
+  font-family: @body__font-family;
+}
+
+body {
+  font-size: @body__font-size;
+  line-height: @body__line-height;
+}
+
+//
+//  Hyperlinks
+//
+
+//
+//  Addresses `outline` inconsistency between Chrome and other browsers.
+//
+
+a:focus {
+  outline: thin dotted;
+}
+
+//
+//  Improves readability when focused and also mouse hovered in all browsers
+//  people.opera.com/patrickl/experiments/keyboard/test
+//
+
+a:hover,
+a:active {
+  outline: 0;
+}
+
+
+a:link,
+a:visited,
+a:active {
+  color: @color--interact;
+  text-decoration: none;
+  vertical-align: baseline;
+}
+
+@media print {
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+}
+
+a:hover,
+a:focus {
+  color: @color--hover;
+}
+
+//
+//  Headings
+//  csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
+//
+
+h1, .alpha {
+  margin: @h1--margin;
+  padding: 0;
+  font-family: @h1--font-family;
+  font-size: @h1--font-size;
+  font-weight: @h1--font-weight;
+  line-height: @h1--line-height;
+  color: @h1--color;
+}
+
+h2, .beta {
+  margin: @h2--margin;
+  padding: 0;
+  font-family: @h2--font-family;
+  font-size: @h2--font-size;
+  font-weight: @h2--font-weight;
+  line-height: @h2--line-height;
+  color: @h2--color;
+}
+
+h3, .gamma {
+  margin: @h3--margin;
+  padding: 0;
+  font-family: @h3--font-family;
+  font-size: @h3--font-size;
+  font-weight: @h3--font-weight;
+  line-height: @h3--line-height;
+  color: @h3--color;
+}
+
+h4, .delta {
+  margin: @h4--margin;
+  padding: 0;
+  font-family: @h4--font-family;
+  font-size: @h4--font-size;
+  font-weight: @h4--font-weight;
+  line-height: @h4--line-height;
+  color: @h4--color;
+}
+
+h5, .epsilon {
+  margin: @h5--margin;
+  padding: 0;
+  font-family: @h5--font-family;
+  font-size: @h5--font-size;
+  font-weight: @h5--font-weight;
+  line-height: @h5--line-height;
+  color: @h5--color;
+}
+
+h6, .zeta {
+  margin: @h6--margin;
+  padding: 0;
+  font-family: @h6--font-family;
+  font-size: @h6--font-size;
+  font-weight: @h6--font-weight;
+  line-height: @h6--line-height;
+  color: @h6--color;
+}
+
+.giga {
+  margin: @giga--margin;
+  padding: 0;
+  font-family: @giga--font-family;
+  font-size: @giga--font-size;
+  font-weight: @giga--font-weight;
+  line-height: @giga--line-height;
+  color: @giga--color;
+}
+
+.mega {
+  margin: @mega--margin;
+  padding: 0;
+  font-family: @mega--font-family;
+  font-size: @mega--font-size;
+  font-weight: @mega--font-weight;
+  line-height: @mega--line-height;
+  color: @mega--color;
+}
+
+.kilo {
+  margin: @kilo--margin;
+  padding: 0;
+  font-family: @kilo--font-family;
+  font-size: @kilo--font-size;
+  font-weight: @kilo--font-weight;
+  line-height: @kilo--line-height;
+  color: @kilo--color;
+}
+
+//
+//  For use on text that needs to be smaller than body copy
+//
+
+.deci {
+  font-size: @deci--font-size;
+}
+
+small,
+.milli {
+  font-size: @small--font-size;  //  Addresses inconsistent and variable font size in all browsers.
+  line-height: @small--line-height;
+}
+
+//
+//  Body Copy
+//
+
+p {
+  margin: 0 0 1em;
+}
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+@media print {
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+}
+
+em {
+  font-style: italic;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+//
+//  Addresses style set to 'bolder' in FF3+, S4/5, Chrome
+//
+
+b,
+strong {
+  font-style: inherit;
+  font-weight: 700;
+  line-height:inherit;
+}
+
+//
+//  Addresses styling not present in S5, Chrome
+//
+
+dfn {
+  font-style: italic;
+}
+
+//
+//  Addresses styling not present in IE6/7/8/9
+//
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+//
+//  Prevents sub and sup affecting line-height in all browsers
+//  gist.github.com/413930
+//
+
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+address {
+  font-style: inherit;
+}
+
+//
+//  Quotes
+//
+
+//
+//  Addresses styling not present in IE7/8/9, S5, Chrome
+//
+
+blockquote, q {
+  quotes: none;
+  position: relative;
+}
+
+blockquote:before,
+q:before {
+  content: "";
+}
+
+blockquote:after,
+q:after {
+  content: "";
+}
+
+blockquote {
+  font-weight: bold;
+  color: @blockquote--color;
+
+    .p {
+      font-size: @blockquote--font-size;
+      line-height: @blockquote--line-height;
+    }
+
+    cite {
+      display: block;
+      color: @blockquote__cite--color;
+    }
+
+}
+
+cite {
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+@media print {
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+}
+
+//
+// Addresses CSS quotes not supported in IE 6/7.
+//
+
+q {
+  quotes: none;
+}
+
+//
+//  Addresses `quotes` property not supported in Safari 4.
+//
+
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+//
+//  Corrects font family set oddly in S4/5, Chrome
+//  en.wikipedia.org/wiki/User:Davidgothberg/Test59
+//
+
+pre,
+code,
+kbd,
+samp {
+  font-family: @code__font-family;
+}
+
+code, pre {
+  border: 1px solid #e1e1e8;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+              border-radius: 3px;
+  background-color: #f7f7f9;
+  font-size: 0.75em;
+  font-weight: 600;
+  color: @body__color;
+}
+
+code {
+  padding: 3px 4px;
+}
+
+pre {
+  display: block;
+  margin: 0 0 25px;
+  padding: 12px 12px 13px;
+  line-height: 2em;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+kbd {
+  margin: 0 0.25em;
+  padding: 0.3333em 0.6667em;
+  border: 1px solid #E6E6E6;
+  border-bottom: 2px solid #E0E0E0;
+  border-radius: 3px;
+  background-color: #FCFCFC;
+  color: #666;
+  font-size: 0.875em;
+  font-weight: normal;
+  line-height: 90%;
+}

@@ -1,0 +1,41 @@
+/*  --  base/_layout.less  --  */
+
+//
+//  Normalise the Box Model
+//  http://paulirish.com/2012/box-sizing-border-box-ftw/
+//
+
+* {
+  -moz-box-sizing: border-box;  // For all versions of firefox
+  -webkit-box-sizing: border-box;  // Android 2.1-3.0, iOS Webkit 3.2 - 4.3 & Blackberry 7.0
+  box-sizing: border-box;
+}
+
+@media print {
+
+  * {
+    background: transparent !important;  //  Stop background image from being printed
+    color: #000 !important;  // Black prints faster: h5bp.com/s
+    box-shadow:none !important;
+    text-shadow: none !important;
+    }
+
+}
+
+//
+//  Corrects `block` display not defined in IE 8/9.
+//
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
