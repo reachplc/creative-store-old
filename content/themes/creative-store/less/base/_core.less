@@ -1,0 +1,101 @@
+/*  --  base/_core.less  --  */
+
+//
+//  Image replacement
+//  https://github.com/h5bp/html5-boilerplate/issues/1149
+//
+
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+}
+
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
+}
+
+
+//
+//  Don't show links for images, or javascript/internal links
+//
+
+@media print {
+
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+
+}
+
+//
+//  Hide from both screenreaders and browsers: h5bp.com/u
+//
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+//
+//  Hide only visually, but have it available for screenreaders: h5bp.com/v
+//
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+//
+//  Extends the .visuallyhidden class to allow the element to be focusable
+//  when navigated to via the keyboard: h5bp.com/p
+//
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+
+//
+//  Hide visually and from screenreaders, but maintain layout
+//
+
+.invisible {
+  visibility: hidden;
+}
+
+//
+//  Centered Text
+//
+
+.text-center {
+  text-align: center;
+}
+
+//
+//  Clear Fix
+//  http://www.css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
+//
+
+.cf:after {
+  content: "";
+  display: table;
+  clear: both;
+}

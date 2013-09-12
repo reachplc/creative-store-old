@@ -1,0 +1,26 @@
+/*  --  base/_table.less  --  */
+
+//
+//  1. Remove most spacing between table cells.
+//
+
+table {
+    border-collapse: collapse;  //  1.
+    border-spacing: 0;  //  1.
+}
+
+td {
+    vertical-align: top;
+}
+
+@media print {
+
+  thead {
+    display: table-header-group; /* h5bp.com/t */
+  }
+
+  tr {
+    page-break-inside: avoid;
+  }
+
+}

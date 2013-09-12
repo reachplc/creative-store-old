@@ -1,3 +1,11 @@
 /local-config.php
 /wp-config.php
 /shared
+
+#  NodeJS
+
+node_modules/
+
+#  CSS
+
+content/themes/creative-store/style.css

@@ -1,0 +1,46 @@
+/*  --  base/_media.less  --  */
+
+img {
+  border: 0;
+  vertical-align: middle; //  Remove the gap between images and borders on image containers: h5bp.com/i/440
+}
+
+@media print {
+
+  img {
+    page-break-inside: avoid;
+    max-width: 100% !important;
+  }
+
+}
+
+//
+//  Correct overflow not hidden in IE9
+//
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+figure {
+  margin: 0;  //  Addresses margin not present in IE 8/9, Safari 5, and Opera 11.
+}
+
+//
+//  Corrects `inline-block` display not defined in IE 8/9 and Firefox 3.
+//
+
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+//
+//  Prevents modern browsers from displaying `audio` without controls.
+//  Remove excess height in iOS 5 devices.
+//
+
+audio:not([controls]) {
+  display: none;
+}
