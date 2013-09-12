@@ -5,3 +5,7 @@
 #  NodeJS
 
 node_modules/
+
+#  CSS
+
+content/themes/creative-store/style.css
