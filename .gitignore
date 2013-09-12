@@ -1,3 +1,7 @@
 /local-config.php
 /wp-config.php
 /shared
+
+#  NodeJS
+
+node_modules/
