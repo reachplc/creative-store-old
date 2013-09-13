@@ -47,7 +47,11 @@ if (!is_user_logged_in()) {
     </nav><!-- #site-navigation -->
 
       <div class='user'>
-        <?php wp_loginout(); ?>
+        <?php
+          if ( is_user_logged_in() ) {  // If logged in:
+            wp_loginout( home_url() ); // Display "Log Out" link.
+          }
+        ?>
       </div>
     </div>
 
