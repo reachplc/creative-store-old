@@ -6,7 +6,22 @@
  *
  * @package creative-store
  */
-?><!DOCTYPE html>
+?>
+
+<?php
+
+/**
+ * Require login for site
+ */
+
+if (!is_user_logged_in()) {
+  header('Location: '.wp_login_url(get_permalink()));
+  exit;
+}
+
+?>
+
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
