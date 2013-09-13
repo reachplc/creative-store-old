@@ -1,0 +1,45 @@
+/* =styles/_header.less
+----------------------------------------------- */
+
+.header__main {
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  background: rgb(37,37,37);
+}
+
+  .header__main a:link,
+  .header__main a:visited,
+  .header__main a:active {
+    color: rgb(255,255,255);
+  }
+
+  .header__main a:hover,
+  .header__main a:focus {
+    color: blue;
+  }
+
+  .header__main .brand {
+    margin: 0;
+    padding: 0;
+    float: left;
+    display: inline-block;
+    font-size: 2em;
+    z-index: 3;
+    line-height: 2em;
+  }
+
+  .header__main .user,
+  .header__main .main-navigation {
+    float: right;
+    display: inline-block;
+    margin: 0 .5em;
+    padding: 0em 1.5em;
+    line-height: 4em;
+    height: 4em;
+  }
+
+  .header__main .user {
+    margin-right: 0;
+    padding-right: 0;
+  }

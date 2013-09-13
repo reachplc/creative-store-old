@@ -29,25 +29,35 @@ if (!is_user_logged_in()) {
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800' rel='stylesheet' type='text/css'>
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	<?php do_action( 'before' ); ?>
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</div>
+  <?php do_action( 'before' ); ?>
+  <header id="masthead" class="header__main cf" role="banner">
+    <div class="wrapper">
+      <div class="brand alpha">
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+      </a>
+    </div>
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+    <a href='#'>Nav</a>
+    </nav><!-- #site-navigation -->
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<h1 class="menu-toggle"><?php _e( 'Menu', 'creative-store' ); ?></h1>
-			<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'creative-store' ); ?>"><?php _e( 'Skip to content', 'creative-store' ); ?></a></div>
+      <div class='user'>
+        <?php wp_loginout(); ?>
+      </div>
+    </div>
 
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+  </header><!-- #masthead -->
 
-	<div id="content" class="site-content">
+  <!--<div class="slide-nav">
+    <h1 class="menu-toggle"><?php #_e( 'Menu', 'creative-store' ); ?></h1>
+    <div class="screen-reader-text skip-link"><a href="#content" title="<?php #esc_attr_e( 'Skip to content', 'creative-store' ); ?>"><?php #_e( 'Skip to content', 'creative-store' ); ?></a></div>
+
+    <?php #wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+  </div>-->
+
+  <div id="content" class="site-content">
