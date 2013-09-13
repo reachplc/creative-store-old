@@ -15,7 +15,7 @@ module.exports = function(grunt) {
     }
 
    ,watch: {
-      files: ['content/themes/creative-store/less/**/*.less']
+      files: ['content/themes/creative-store/less/**/**.less']
      ,tasks: ['less']
      ,options: {
         livereload: true
