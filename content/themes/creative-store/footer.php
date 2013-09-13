@@ -8,14 +8,22 @@
  */
 ?>
 
-	</div><!-- #content -->
+  </div><!--/ #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			&copy; Trinity Mirror Creative
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+  <footer id="colophon" class="footer__main cf" role="contentinfo">
+
+    <div class="wrapper">
+      <small class="site-info">
+        Copyright &copy; Trinity Mirror plc
+      </small><!--/ .site-info -->
+      <small class="brand">
+      Trinity Mirror plc
+      </small><!--/ .brand  -->
+    </div><!--/ .wrapper  -->
+
+  </footer><!--/ #colophon -->
+
+</div><!--/ #page -->
 
 <?php wp_footer(); ?>
 
