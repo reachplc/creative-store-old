@@ -36,14 +36,26 @@ if (!is_user_logged_in()) {
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
   <?php do_action( 'before' ); ?>
-  <header id="masthead" class="header__main cf" role="banner">
+
+  <nav id="js-nav" class="nav-main nav-main__nav" role="navigation">
+<?php get_sidebar(); ?>
+  </nav>
+
+    <!--<div class="slide-nav">
+    <h1 class="menu-toggle"><?php #_e( 'Menu', 'creative-store' ); ?></h1>
+    <div class="screen-reader-text skip-link"><a href="#content" title="<?php #esc_attr_e( 'Skip to content', 'creative-store' ); ?>"><?php #_e( 'Skip to content', 'creative-store' ); ?></a></div>
+
+    <?php #wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+  </div>-->
+
+  <header id="masthead" class="header__main nav-main__header cf" role="banner">
     <div class="wrapper">
       <div class="brand alpha">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
       </a>
     </div>
-    <nav id="site-navigation" class="main-navigation" role="navigation">
-    <a href='#'>Nav</a>
+    <nav id="site-navigation" class="main-navigation">
+    <button id="js-nav-button">nav</button>
     </nav><!-- #site-navigation -->
 
       <div class='user'>
@@ -57,11 +69,4 @@ if (!is_user_logged_in()) {
 
   </header><!-- #masthead -->
 
-  <!--<div class="slide-nav">
-    <h1 class="menu-toggle"><?php #_e( 'Menu', 'creative-store' ); ?></h1>
-    <div class="screen-reader-text skip-link"><a href="#content" title="<?php #esc_attr_e( 'Skip to content', 'creative-store' ); ?>"><?php #_e( 'Skip to content', 'creative-store' ); ?></a></div>
-
-    <?php #wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-  </div>-->
-
-  <div id="content" class="site-content">
+  <div id="content" class="site-content nav-main__content">
