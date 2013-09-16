@@ -5,7 +5,31 @@
   position: fixed;
   top: 0;
   right: 0;
+  padding: 1em;
   width: 34%;
   height: 100%;
   background: rgb(27,196,229);
+
+  .gamma {
+    color: rgb(255, 255, 255);
+  }
+
+  //  @TODO: Add class of `list` to lists in sidebar
+
+  // 1. Removes bullets
+  // 2. Removes default margin for ul
+  // 3. Removes default padding
+  //
+  ul {
+    list-style:none;  // 1.
+    margin-top: 0;  // 2.
+    margin-bottom: 0;  // 2.
+    padding-left:0;  // 3.
+  }
+
+  ul > li > a {
+    color: rgb(255, 255, 255);
+  }
+
 }
+
