@@ -1,6 +1,7 @@
 {
   "name": "creative-store"
  ,"version": "0.0.0"
+ ,"private": true
  ,"description": "WordPress theme for the Creative Store site."
  ,"keywords": [
     "wordpress"
