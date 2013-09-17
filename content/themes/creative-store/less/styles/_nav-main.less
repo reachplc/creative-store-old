@@ -1,0 +1,35 @@
+/* =styles/_nav-main.less
+ *  extends jquery.nav-main.js
+----------------------------------------------- */
+
+@nav-main__transition-type: 0.3s ease;
+
+.nav-main__content {
+  width: 66%;
+  -webkit-transition: width @nav-main__transition-type;
+  transition: width @nav-main__transition-type;
+}
+
+.nav-main__nav {
+  width: 34%;
+  -webkit-transition: right @nav-main__transition-type;
+  transition: right @nav-main__transition-type;
+}
+
+.nav-main__header {
+  width: 66%;
+  -webkit-transition: width @nav-main__transition-type;
+  transition: width @nav-main__transition-type;
+}
+
+.is-expand {
+  width: 100%;
+  -webkit-transition: width @nav-main__transition-type;
+  transition: width @nav-main__transition-type;
+}
+
+.is-nav-inactive {
+  right: -34%;
+  -webkit-transition: right @nav-main__transition-type;
+  transition: right @nav-main__transition-type;
+}

@@ -319,11 +319,6 @@ object {
   max-width: 100%;
 }
 
-/* Search widget */
-.widget_search .search-submit {
-  display: none;
-}
-
 /* =Infinite Scroll
 ----------------------------------------------- */
 
@@ -338,8 +333,22 @@ object {
   display: block;
 }
 
+//  Objects
+//  Reusable CSS pattens
+
+@import 'objects/_list.less';
+
+//  To extend the styling of these objects, create a folder called styles to store
+//  the less files and import below under the Styling header
+
+//  Styling
+//  Control the look and feel of the objects
+
 @import 'styles/_header.less';
 @import 'styles/_footer.less';
+@import 'styles/_navigation.less';
+@import 'styles/_nav-main.less';
+@import 'styles/_search.less';
 @import 'styles/_grid.less';
 
 @import 'base/_core.less';

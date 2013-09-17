@@ -73,7 +73,7 @@ function creative_store_widgets_init() {
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
+		'before_title'  => '<h1 class="gamma widget-title">',
 		'after_title'   => '</h1>',
 	) );
 }
@@ -98,6 +98,15 @@ function creative_store_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'creative_store_scripts' );
+
+function wpb_adding_scripts() {
+	wp_register_script('nav-main', get_template_directory_uri() . '/js/jquery.nav-main.js', array('jquery'),'0.0.0', true);
+	wp_enqueue_script('nav-main');
+}
+
+add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts' );
+
+
 
 /**
  * WooCommerce scripts and styles
