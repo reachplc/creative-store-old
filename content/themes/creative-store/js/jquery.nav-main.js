@@ -17,10 +17,12 @@
    ,button : '#js-nav-button'
   };
 
-  navMain.init = function() {
+  navMain.init = function(config) {
 
-    //  Load Config
-    $.extend(navMain.config, window.myconfig);
+    // provide for custom configuration via init()
+    if (config && typeof(config) == 'object') {
+      $.extend(formValidation.config, config);
+    }
 
     //  Hide navigation if JS available
     $(navMain.config.header).addClass("is-expand");
@@ -48,8 +50,8 @@
   $(document).ready(function() {
 
     // To extend the default config settings
-    // add an object to `window.myconfig`
-    // eg. window.myconfig = { wrapper: '#js-wrapper'};
+    // pass a object as an argument for the init function
+    // eg. navMain.init({ wrapper: '#js-wrapper'});
 
     navMain.init();
 
