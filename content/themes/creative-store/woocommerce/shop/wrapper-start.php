@@ -9,14 +9,14 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-echo '<main id="main" class="site-main site-shop" role="main">';
+echo '<main id="main" class="site-main site-shop wrapper" role="main">';
 
 // Check to apply the correct process breadcrumbs state
 // depending on the page viewed
 if ( is_shop() ) {
 ?>
 
-  <div class="instructions wrapper">
+  <div class="instructions">
     <ol class="list breadcrumbs breadcrumbs__instructions">
       <li class="text-center">
         <figure>
