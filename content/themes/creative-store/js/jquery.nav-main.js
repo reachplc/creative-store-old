@@ -12,7 +12,7 @@
     wrapper : '.wrapper'
    ,container : '#js-content'
    ,header : '.header__main'
-   ,content : '.content'
+   ,content : '.nav-main__content'
    ,nav: '#js-nav'
    ,button : '#js-nav-button'
   };
