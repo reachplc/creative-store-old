@@ -1,14 +1,17 @@
 /* =styles/_shop.less
 ----------------------------------------------- */
 
-/*  Category View
+/*  Category/Product View
+ *
+ *  - Controls the products displayed in category
+ *    and product views
  *
  */
 
 .products {
   display: table;
-  width: 100%;
-  padding-left: 0;  //  Removes default padding on ul
+  width: 100%;  //  Forces the `ul` to span the width of the parent element
+  padding-left: 0;  //  Removes default padding on `ul`
   border-collapse: collapse;
 }
 
@@ -18,18 +21,20 @@
     clear: both;
   }
 
-.product-category {
+//  Controls the direct children of the `.products` loop
+
+.product {
   display: table-cell;
   float: left;
   width: 32.03125%;
   margin-left: 1.953125%;
 }
 
-.product-category:nth-child(2n+1){
+.product:nth-child(2n+1){
   margin-left: 1.953125%;
 }
 
-.product-category:nth-child(3n+1){
+.product:nth-child(3n+1){
   margin-left: 0;
 }
 
