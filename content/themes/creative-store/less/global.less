@@ -34,7 +34,13 @@ and Blueprint http://www.blueprintcss.org/
 @import 'base/_media.less';
 
 body {
-  background: #fff;
+  background: rgb(119,120,122); /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover, rgb(119,120,122) 0%, rgb(67,68,70) 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgb(119,120,122)), color-stop(100%,rgb(67,68,70))); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover, rgb(119,120,122) 0%,rgb(67,68,70) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover, rgb(119,120,122) 0%,rgb(67,68,70) 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover, rgb(119,120,122) 0%,rgb(67,68,70) 100%); /* IE10+ */
+background: radial-gradient(ellipse at center, rgb(119,120,122) 0%,rgb(67,68,70) 100%); /* W3C */
 }
 
 
@@ -349,6 +355,8 @@ object {
 @import 'styles/_navigation.less';
 @import 'styles/_nav-main.less';
 @import 'styles/_search.less';
+@import 'styles/_instructions.less';
+@import 'styles/_shop.less';
 @import 'styles/_grid.less';
 
 @import 'base/_core.less';
