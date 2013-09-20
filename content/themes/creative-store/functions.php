@@ -119,6 +119,9 @@ function remove_add_to_cart_buttons() {
   remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
 }
 
+//  Removes price from products view
+  remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10);
+
 // Declare WooCommerce support
 add_theme_support( 'woocommerce' );
 
