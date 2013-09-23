@@ -112,6 +112,16 @@ add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts' );
  * WooCommerce scripts and styles
  */
 
+//  Removes add to cart button from products view
+add_action( 'woocommerce_after_shop_loop_item', 'remove_add_to_cart_buttons', 1 );
+
+function remove_add_to_cart_buttons() {
+  remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
+}
+
+//  Removes price from products view
+  remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10);
+
 // Declare WooCommerce support
 add_theme_support( 'woocommerce' );
 

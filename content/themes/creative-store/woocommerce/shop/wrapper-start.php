@@ -42,7 +42,7 @@ if ( is_shop() ) {
 <?php
 } elseif( is_product_category() ) {
 ?>
-  <div class="instructions wrapper">
+  <div class="instructions">
     <ol class="list breadcrumbs breadcrumbs__instructions">
       <li class="text-center">
         <figure>
@@ -67,7 +67,7 @@ if ( is_shop() ) {
 <?php
 } elseif( is_product() ) {
   ?>
-  <div class="instructions wrapper">
+  <div class="instructions">
     <ol class="list breadcrumbs breadcrumbs__instructions">
       <li class="text-center">
         <figure>
