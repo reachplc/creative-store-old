@@ -1,23 +1,24 @@
 {
-  "name": "creative-store"
- ,"version": "0.0.0"
- ,"private": true
- ,"description": "WordPress theme for the Creative Store site."
- ,"keywords": [
-    "wordpress"
-   ,"creative-store"
-  ]
- ,"author": "Trinity Mirror Creative"
- ,"contributors": [
+  "name": "creative-store",
+  "version": "0.0.0",
+  "private": true,
+  "description": "WordPress theme for the Creative Store site.",
+  "keywords": [
+    "wordpress",
+    "creative-store"
+  ],
+  "author": "Trinity Mirror Creative",
+  "contributors": [
     {
-      "name": "Michael Bragg"
-     ,"email": "michael@michaelbragg.net"
+      "name": "Michael Bragg",
+      "email": "michael@michaelbragg.net"
     }
-  ]
- ,"license": "MIT"
- ,"devDependencies": {
-    "grunt": "0.4.x"
-   ,"grunt-contrib-less": "0.7.x"
-   ,"grunt-contrib-watch": "0.5.x"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "0.4.x",
+    "grunt-contrib-less": "0.7.x",
+    "grunt-contrib-watch": "0.5.x",
+    "grunt-contrib-csslint": "0.1.x"
   }
 }
