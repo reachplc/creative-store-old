@@ -20,17 +20,17 @@
   navMain.init = function(config) {
 
     // provide for custom configuration via init()
-    if (config && typeof(config) == 'object') {
-      $.extend(formValidation.config, config);
+    if (config && typeof(config) === 'object') {
+      $.extend(navMain.config, config);
     }
 
     //  Hide navigation if JS available
-    $(navMain.config.header).addClass("is-expand");
-    $(navMain.config.content).addClass("is-expand");
-    $(navMain.config.nav).addClass("is-nav-inactive");
+    $(navMain.config.header).addClass('is-expand');
+    $(navMain.config.content).addClass('is-expand');
+    $(navMain.config.nav).addClass('is-nav-inactive');
 
     //  Add event listener for changeState
-    $(navMain.config.button).on("click", function(){
+    $(navMain.config.button).on('click', function(){
       navMain.changeState();
     });
 
@@ -39,9 +39,9 @@
   navMain.changeState = function() {
 
     //  Toggle presentation class
-    $(navMain.config.content).toggleClass("is-expand");
-    $(navMain.config.header).toggleClass("is-expand");
-    $(navMain.config.nav).toggleClass("is-nav-inactive");
+    $(navMain.config.content).toggleClass('is-expand');
+    $(navMain.config.header).toggleClass('is-expand');
+    $(navMain.config.nav).toggleClass('is-nav-inactive');
 
   };
 
