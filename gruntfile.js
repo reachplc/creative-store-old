@@ -14,6 +14,39 @@ module.exports = function(grunt) {
       }
     }
 
+   ,jshint: {
+      options: {
+        browser: true
+       ,curly: true
+       ,eqeqeq: true
+       ,eqnull: true
+       ,indent: 2
+       ,laxbreak: true
+       ,laxcomma: true
+       ,quotmark: 'single'
+       ,trailing: true
+       ,undef: true
+       ,globals: {
+          jQuery: true
+        }
+      }
+     ,files: {
+        src: ['content/themes/creative-store/js/jquery.nav-main.js']
+      }
+    }
+
+    ,csslint: {
+      options: {
+         "adjoining-classes": false
+        ,"box-sizing": false
+        ,"regex-selectors": false
+        ,"universal-selector": false
+      }
+      ,files: {
+        src: ['content/themes/creative-store/style.css']
+      }
+    }
+
    ,watch: {
       files: ['content/themes/creative-store/less/**/**.less']
      ,tasks: ['less']
@@ -26,8 +59,11 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-csslint');
 
   grunt.registerTask('default', 'serve');
   grunt.registerTask('serve', ['less', 'watch']);
+  grunt.registerTask('ci-test', ['jshint', 'csslint']);
 
 };
