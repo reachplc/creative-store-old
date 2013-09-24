@@ -1,48 +1,78 @@
 /* =styles/_shop.less
 ----------------------------------------------- */
 
-/*  Category/Product View
+/**
+ *  Category/Product View
  *
  *  - Controls the products displayed in category
  *    and product views
  *
  */
 
+//  TODO: Apply object `list` to `ul.products` to allow us to remove this
+//  code that is already loaded in `objects/_list.less`.
+//  1. Removes bullets
+//  2. Removes default margin for ul
+//  3. Removes default padding
+//
+
 .products {
-  display: table;
-  width: 100%;  //  Forces the `ul` to span the width of the parent element
-  padding-left: 0;  //  Removes default padding on `ul`
-  border-collapse: collapse;
+  list-style:none;  // 1.
+  margin-top: 0;  // 2.
+  margin-bottom: 0;  // 2.
+  padding-left:0;  // 3.
 }
 
-  .products:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+.products {
+  max-width: 100%;
+
+  a {
+    position: relative;
+    display: block; // Important - otherwise caption do position correctly
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block; // Remove weird pixel padding
+    }
+}
+
+}
 
 //  Controls the direct children of the `.products` loop
 
+@gutter: 29px;
+@columns: 3;
+@break-point: 1000px;
+
 .product {
-  display: table-cell;
   float: left;
-  width: 32.03125%;
-  margin-left: 1.953125%;
+  padding-right: (@gutter/2);
+  padding-left: (@gutter/2);
+  // Mathematically generate the column width from defined variables
+  width: (100%*(((((@break-point)-((@gutter)*((@columns)-1)))/(@columns))+(@gutter))/(@break-point)));
 }
 
-.product:nth-child(2n+1){
-  margin-left: 1.953125%;
+//  1. Removes padding on first or last objects in the row.
+//  2. As padding falls inside of the column width. We reduce the width
+//     by half the gutter.
+//
+
+.product:nth-child(3n+1) {
+  padding-left: 0;  //  1.
+  width: (100%*(((((@break-point)-((@gutter)*((@columns)-1)))/(@columns))+((@gutter)/2))/(@break-point)));  //  2.
 }
 
-.product:nth-child(3n+1){
-  margin-left: 0;
+.product:nth-child(3n+3) {
+  padding-right: 0; //  1.
+  width: (100%*(((((@break-point)-((@gutter)*((@columns)-1)))/(@columns))+((@gutter)/2))/(@break-point)));  //  2.
 }
 
 .product img {
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 
-  //  Standardises height to fit grid
+  //  1. Standardises height to fit grid
   .product--title{
-    min-height: 2.5em;
+    min-height: 5em;  //  1.
   }
