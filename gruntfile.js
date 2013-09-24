@@ -38,6 +38,7 @@ module.exports = function(grunt) {
     ,csslint: {
       options: {
          "adjoining-classes": false
+        ,"box-model": false
         ,"box-sizing": false
         ,"regex-selectors": false
         ,"universal-selector": false

@@ -18,21 +18,6 @@
   height: 150%;
 }
 
-
-//
-//  Don't show links for images, or javascript/internal links
-//
-
-@media print {
-
-  .ir a:after,
-  a[href^="javascript:"]:after,
-  a[href^="#"]:after {
-    content: "";
-  }
-
-}
-
 //
 //  Hide from both screenreaders and browsers: h5bp.com/u
 //
@@ -98,4 +83,41 @@
   content: "";
   display: table;
   clear: both;
+}
+
+//
+//  Don't show links for images, or javascript/internal links
+//
+
+@media print {
+
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+
+}
+
+@media print {
+
+  img {
+    page-break-inside: avoid;
+    max-width: 100%;
+  }
+
+}
+
+@media print {
+
+//  1. Stop background image from being printed
+//  2. Black prints faster: h5bp.com/s
+
+  * {
+    background: transparent;  //  1.
+    color: #000;  //  2.
+    box-shadow: none;
+    text-shadow: none;
+  }
+
 }
