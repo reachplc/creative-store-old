@@ -125,6 +125,13 @@ function remove_add_to_cart_buttons() {
 //  Removes price from content-single-product
 remove_action ( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
 
+//  Removes stock notification from content-single-product
+add_filter( 'woocommerce_stock_html', 'hide_availability' );
+
+function hide_availability() {
+
+}
+
 // Declare WooCommerce support
 add_theme_support( 'woocommerce' );
 
