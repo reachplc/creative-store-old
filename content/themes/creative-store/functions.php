@@ -132,6 +132,20 @@ function hide_availability() {
 
 }
 
+//  Updates 'add to cart' button to redirect to checkout
+add_filter('add_to_cart_redirect', 'custom_add_to_cart_redirect');
+
+function custom_add_to_cart_redirect() {
+     return get_permalink(get_option('woocommerce_checkout_page_id'));
+}
+
+//  Change the text on the add to cart button
+add_filter('single_add_to_cart_text', 'woo_custom_cart_button_text');
+
+function woo_custom_cart_button_text() {
+  return __('Reserve', 'woocommerce');
+}
+
 // Declare WooCommerce support
 add_theme_support( 'woocommerce' );
 
