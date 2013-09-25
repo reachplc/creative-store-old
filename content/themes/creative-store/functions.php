@@ -122,6 +122,9 @@ function remove_add_to_cart_buttons() {
 //  Removes price from products view
   remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10);
 
+//  Removes price from content-single-product
+remove_action ( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+
 // Declare WooCommerce support
 add_theme_support( 'woocommerce' );
 
