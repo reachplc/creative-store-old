@@ -1,0 +1,41 @@
+#!/bin/sh
+
+function help () {
+ echo '';
+}
+
+# Install NPM dependencies
+npm install
+
+# Copy config files
+echo ''
+echo 'Installing config files...'
+cp ./_scripts/local-config-sample.php ./local-config.php
+cp ./_scripts/wp-config-sample.php ./wp-config.php
+
+echo 'Remember to add in your local MySQL database name, username'
+echo 'and password to the local-config.php file'
+
+# Install the MySQL database
+echo ''
+read -p 'Enter your MySQL username (normally root): ' mysql_username;
+echo ''
+echo 'Creating the MySQL database...'
+mysql -u $mysql_username -p -e "create database install_test;"
+echo ''
+echo 'Import the Creative Store MySQL database...'
+mysql -u $mysql_username -p install_test < ~/Dropbox/creative-store/creative-store_dummy-data.sql
+# Install our git pre-commit hook
+echo ''
+echo 'Installing pre-commit hook...'
+ln -s ../../_scripts/pre-commit .git/hooks/pre-commit
+
+echo ''
+echo 'Applying ownership and permissions...'
+sudo chown -R _www ./
+sudo chmod -R g+w ./
+
+#  Run grunt
+echo ''
+echo 'Run Grunt...'
+grunt
