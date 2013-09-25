@@ -45,7 +45,7 @@
 @columns: 3;
 @break-point: 1000px;
 
-.product {
+.products__list {
   float: left;
   padding-right: (@gutter/2);
   padding-left: (@gutter/2);
@@ -58,21 +58,21 @@
 //     by half the gutter.
 //
 
-.product:nth-child(3n+1) {
+.products__list:nth-child(3n+1) {
   padding-left: 0;  //  1.
   width: (100%*(((((@break-point)-((@gutter)*((@columns)-1)))/(@columns))+((@gutter)/2))/(@break-point)));  //  2.
 }
 
-.product:nth-child(3n+3) {
+.products__list:nth-child(3n+3) {
   padding-right: 0; //  1.
   width: (100%*(((((@break-point)-((@gutter)*((@columns)-1)))/(@columns))+((@gutter)/2))/(@break-point)));  //  2.
 }
 
-.product img {
+.products__list img {
   margin-bottom: 0.5em;
 }
 
   //  1. Standardises height to fit grid
-  .product--title{
+  .products--title{
     min-height: 5em;  //  1.
   }
