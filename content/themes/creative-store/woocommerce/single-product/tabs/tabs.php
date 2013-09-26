@@ -39,7 +39,3 @@ if ( ! empty( $tabs ) ) : ?>
 	</div>
 
 <?php endif; ?>
-
-</div><!-- .products__view__info  -->
-<div class="cf"></div>
-

@@ -146,6 +146,9 @@ function woo_custom_cart_button_text() {
   return __('Reserve', 'woocommerce');
 }
 
+//  Remove data tabs from product view
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs',10);
+
 // Declare WooCommerce support
 add_theme_support( 'woocommerce' );
 

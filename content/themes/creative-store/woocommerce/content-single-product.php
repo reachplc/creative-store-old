@@ -52,6 +52,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
       ?>
 
     </div><!-- .summary -->
+</div><!-- .products__view__info  -->
+
+<div class="cf"></div>
 
     <?php
       /**
