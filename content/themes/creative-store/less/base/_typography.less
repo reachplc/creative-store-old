@@ -10,19 +10,22 @@ html {
 }
 
 //
-//  Address `font-family` inconsistency between `textarea` and other form elements.
+//  1. Address `font-family` inconsistency between `textarea` and
+//     other form elements.
+//  2. Correct font-size not inheriting in all browsers
 //
 
 html,
+body,
 button,
 input,
 select,
 textarea {
+  font-size: @body__font-size;  //  1.
   font-family: @body__font-family;
 }
 
 body {
-  font-size: @body__font-size;
   font-weight: @body__font-weight;
   line-height: @body__line-height;
   color: @body__color;
@@ -130,44 +133,6 @@ h6, .zeta {
   font-weight: @h6--font-weight;
   line-height: @h6--line-height;
   color: @h6--color;
-}
-
-.giga {
-  margin: @giga--margin;
-  padding: 0;
-  font-family: @giga--font-family;
-  font-size: @giga--font-size;
-  font-weight: @giga--font-weight;
-  line-height: @giga--line-height;
-  color: @giga--color;
-}
-
-.mega {
-  margin: @mega--margin;
-  padding: 0;
-  font-family: @mega--font-family;
-  font-size: @mega--font-size;
-  font-weight: @mega--font-weight;
-  line-height: @mega--line-height;
-  color: @mega--color;
-}
-
-.kilo {
-  margin: @kilo--margin;
-  padding: 0;
-  font-family: @kilo--font-family;
-  font-size: @kilo--font-size;
-  font-weight: @kilo--font-weight;
-  line-height: @kilo--line-height;
-  color: @kilo--color;
-}
-
-//
-//  For use on text that needs to be smaller than body copy
-//
-
-.deci {
-  font-size: @deci--font-size;
 }
 
 small,
