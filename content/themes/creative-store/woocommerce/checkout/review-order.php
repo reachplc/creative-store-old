@@ -13,7 +13,7 @@ global $woocommerce;
 
 $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 ?>
-<div id="order_review">
+<div id="order_review" class="checkout__order-review grid ms1-ms6">
 <h3 id="order_review_heading"><?php _e( 'Your order', 'woocommerce' ); ?></h3>
 
 <p>Please review your products...</p>

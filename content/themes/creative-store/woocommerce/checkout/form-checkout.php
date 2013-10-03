@@ -33,7 +33,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', $woocommerce-
 
     <?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 
-    <div id="customer_details">
+    <div id="customer_details" class="grid ms7-ms12">
 
         <?php do_action( 'woocommerce_checkout_billing' ); ?>
 
