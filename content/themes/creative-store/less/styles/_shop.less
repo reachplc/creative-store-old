@@ -46,9 +46,6 @@
 @break-point: 1000px;
 
 .products__list {
-  float: left;
-  padding-right: (@gutter/2);
-  padding-left: (@gutter/2);
   // Mathematically generate the column width from defined variables
   width: (100%*(((((@break-point)-((@gutter)*((@columns)-1)))/(@columns))+(@gutter))/(@break-point)));
 }

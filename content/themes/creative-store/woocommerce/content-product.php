@@ -29,6 +29,7 @@ $woocommerce_loop['loop']++;
 // Extra post classes
 $classes = array();
 // Add view class
+$classes[] = 'grid';
 $classes[] = 'products__list';
 if ( 0 == ( $woocommerce_loop['loop'] - 1 ) % $woocommerce_loop['columns'] || 1 == $woocommerce_loop['columns'] )
   $classes[] = 'first';
