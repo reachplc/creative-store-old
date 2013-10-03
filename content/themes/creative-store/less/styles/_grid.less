@@ -9,10 +9,70 @@ body {
 .wrapper {
   position: relative;
   margin: 0 auto;
-  max-width: 90%;
+  max-width: 60em;
 }
 
 .site-content {
   padding-top: 4em;  // Adds space for fixed header
   padding-bottom: 2em;  // Adds space for fixed footer
 }
+
+/**
+ *  Grid
+ *
+ *  - Overall Grid
+ *
+ */
+
+.grid {
+  @gutter: 29px;
+  float: left;
+  padding-right: (@gutter/2);
+  padding-left: (@gutter/2);
+}
+
+/**
+ *  Grid: Medium Screen;
+ *
+ *  - Maximum width of 960px
+ *
+ */
+
+//  @media screen and (min-width: 60em) {
+
+.ms1-ms6,
+.ms7-ms12 {
+  width: 49.739583%; //  (((82*6)-(29/2))/960)*100
+}
+
+.ms1,
+.ms1-ms2,
+.ms1-ms3,
+.ms1-ms4,
+.ms1-ms5,
+.ms1-ms6,
+.ms1-ms7,
+.ms1-ms8,
+.ms1-ms9,
+.ms1-ms10,
+.ms1-ms11,
+.ms1-ms12 {
+  padding-left: 0;
+}
+
+.ms12,
+.ms1-ms12,
+.ms2-ms12,
+.ms3-ms12,
+.ms4-ms12,
+.ms5-ms12,
+.ms6-ms12,
+.ms7-ms12,
+.ms8-ms12,
+.ms9-ms12,
+.ms10-ms12,
+.ms11-ms12 {
+  padding-right: 0;
+}
+
+//  } // Medium Screen

@@ -149,6 +149,74 @@ function woo_custom_cart_button_text() {
 //  Remove data tabs from product view
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs',10);
 
+
+/**
+ * Checkout
+ */
+
+// Update checkout fields
+add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+
+// Our hooked in function - $fields is passed via the filter!
+function custom_override_checkout_fields( $fields ) {
+
+  //  Removes country field
+  unset($fields['billing']['billing_country']);
+  //  Removes first name
+  unset($fields['billing']['billing_first_name']);
+  //  Removes last name
+  unset($fields['billing']['billing_last_name']);
+  //  Removes company name
+  unset($fields['billing']['billing_company']);
+  //  Removes billing address
+  unset($fields['billing']['billing_address_1']);
+  unset($fields['billing']['billing_address_2']);
+  unset($fields['billing']['billing_city']);
+  unset($fields['billing']['billing_state']);
+  unset($fields['billing']['billing_postcode']);
+  // Removes email
+  unset($fields['billing']['billing_email']);
+  // Removes phone number
+  unset($fields['billing']['billing_phone']);
+
+  //  Add fields
+
+  //  Sales Reps Email
+  $fields['billing']['rep_email'] = array(
+    'label'     => __('Sales Email Address', 'woocommerce'),
+    'placeholder'   => _x('name.name@trinitymirror.com', 'placeholder', 'woocommerce'),
+    'required'  => true,
+    //'class'     => array('form-row-wide'),
+    'clear'     => true
+  );
+  //  Client Name
+  $fields['billing']['client_name'] = array(
+    'label'     => __('Client\'s Name', 'woocommerce'),
+    'required'  => true,
+    //'class'     => array('form-row-wide'),
+    'clear'     => true
+  );
+
+  //  Returns edited fields
+  return $fields;
+}
+
+// Update the order meta with field value
+add_action('woocommerce_checkout_update_order_meta', 'my_custom_checkout_field_update_order_meta');
+
+function my_custom_checkout_field_update_order_meta( $order_id ) {
+    if ($_POST['rep_email']) update_post_meta( $order_id, 'sales_email_address', esc_attr($_POST['rep_email']));
+    if ($_POST['client_name']) update_post_meta( $order_id, 'client_name', esc_attr($_POST['client_name']));
+}
+
+//  Add new fields to order edition page
+add_action( 'woocommerce_admin_order_data_after_billing_address', 'my_custom_checkout_field_display_admin_order_meta', 10, 1 );
+
+function my_custom_checkout_field_display_admin_order_meta($order){
+    echo '<p><strong>'.__('Sales Email Address').':</strong> ' . $order->order_custom_fields['sales_email_address'][0] . '</p>';
+    echo '<p><strong>'.__('Client\'s Name').':</strong> ' . $order->order_custom_fields['client_name'][0] . '</p>';
+}
+
 // Declare WooCommerce support
 add_theme_support( 'woocommerce' );
 
