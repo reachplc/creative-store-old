@@ -1,0 +1,56 @@
+/* =styles/_pagination.less
+----------------------------------------------- */
+
+/*  WooCommerce > Pagination
+ *
+ *  - Styles the pagination lists
+ *
+ */
+
+.woocommerce-pagination {
+  margin-bottom: 1em;
+}
+
+//  TODO: Apply object `list` to `.woocommerce-pagination > ul`
+//        to allow us to remove this code that is already loaded
+//        in `objects/_list.less`.
+//  1. Removes bullets
+//  2. Removes default margin for ul
+//  3. Removes default padding
+//
+
+.woocommerce-pagination > ul {
+  list-style:none;  // 1.
+  margin-top: 0;  // 2.
+  margin-bottom: 0;  // 2.
+  padding-left:0;  // 3.
+
+  display: table;
+}
+
+.woocommerce-pagination > ul > li {
+  display: table-cell;
+}
+
+.woocommerce-pagination > ul > li > .page-numbers {
+  display: inline-block;
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+  padding-right: 1.5em;
+  padding-left: 1.5em;
+  line-height: 3em;
+  background: #1bc4e5;
+
+&:hover,
+&:focus {
+    background: darken(#1bc4e5, 10%);
+    color: #fff;
+  }
+
+}
+
+//  Styles the current page
+.woocommerce-pagination > ul > li > .current {
+  background: darken(#1bc4e5, 10%);
+  cursor: default;  //  Hides text cursor on hover
+}
