@@ -112,6 +112,9 @@ add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts' );
  * WooCommerce scripts and styles
  */
 
+//  Set amount of products to display per page
+add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 9;' ), 20 );
+
 //  Removes add to cart button from products view
 add_action( 'woocommerce_after_shop_loop_item', 'remove_add_to_cart_buttons', 1 );
 
