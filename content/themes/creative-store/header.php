@@ -60,8 +60,9 @@ if (!is_user_logged_in()) {
 
       <div class='user'>
         <?php
+          $current_user = wp_get_current_user();
           if ( is_user_logged_in() ) {  // If logged in:
-            wp_loginout( home_url() ); // Display "Log Out" link.
+            echo 'Welcome back ' . $current_user->user_login ;
           }
         ?>
       </div>
