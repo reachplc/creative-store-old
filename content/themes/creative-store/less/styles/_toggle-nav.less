@@ -1,0 +1,21 @@
+/* =styles/_toggle-nav.less
+ *  extends jquery.toggle-nav.js
+----------------------------------------------- */
+
+.nav__section--expanded > a:after {
+  content: ' ';
+  display: inline-block;
+  margin-left: 0.5em;
+  height: 1em;
+  width: 1em;
+  background: url('gui/sprite_nav-icons') no-repeat left top;
+}
+
+.nav__section--contracted > a:after {
+  content: ' ';
+  display: inline-block;
+  margin-left: 0.5em;
+  height: 1em;
+  width: 1em;
+  background: url('gui/sprite_nav-icons') no-repeat right bottom;
+}
