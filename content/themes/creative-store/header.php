@@ -37,16 +37,11 @@ if (!is_user_logged_in()) {
 <div id="page" class="hfeed site">
   <?php do_action( 'before' ); ?>
 
+<div class="screen-reader-text skip-link"><a href="#content" title="<?php #esc_attr_e( 'Skip to content', 'creative-store' ); ?>"><?php #_e( 'Skip to content', 'creative-store' ); ?></a></div>
+
   <nav id="js-nav" class="nav-main nav-main__nav" role="navigation">
 <?php get_sidebar(); ?>
   </nav>
-
-    <!--<div class="slide-nav">
-    <h1 class="menu-toggle"><?php #_e( 'Menu', 'creative-store' ); ?></h1>
-    <div class="screen-reader-text skip-link"><a href="#content" title="<?php #esc_attr_e( 'Skip to content', 'creative-store' ); ?>"><?php #_e( 'Skip to content', 'creative-store' ); ?></a></div>
-
-    <?php #wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-  </div>-->
 
   <header id="masthead" class="header__main nav-main__header cf" role="banner">
     <div class="wrapper">
@@ -54,8 +49,9 @@ if (!is_user_logged_in()) {
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
       </a>
     </div>
+
     <nav id="site-navigation" class="main-navigation">
-    <button id="js-nav-button">nav</button>
+    <img id="js-nav-button" class="icon--navicon" src="<?php echo bloginfo('stylesheet_directory'); ?>/gui/navicon.png" alt="Navigation">
     </nav><!-- #site-navigation -->
 
       <div class='user'>
