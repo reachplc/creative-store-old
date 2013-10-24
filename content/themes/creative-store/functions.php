@@ -114,6 +114,23 @@ add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts' );
  * WooCommerce scripts and styles
  */
 
+/**
+ * Products
+ */
+
+//  Add custom placeholder image
+add_action( 'init', 'custom_fix_thumbnail' );
+
+function custom_fix_thumbnail() {
+  add_filter('woocommerce_placeholder_img_src', 'custom_woocommerce_placeholder_img_src');
+
+  function custom_woocommerce_placeholder_img_src( $src ) {
+    $gui_dir = get_template_directory_uri();
+    $src = $gui_dir . '/gui/placeholder_woocommerce.png';
+    return $src;
+  }
+}
+
 //  Set amount of products to display per page
 add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 9;' ), 20 );
 
