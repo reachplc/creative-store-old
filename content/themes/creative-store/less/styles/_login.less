@@ -1,0 +1,66 @@
+/* =styles/_login.less
+----------------------------------------------- */
+
+/**
+ *  Login View
+ *
+ *  - Controls the login page
+ *    Overqualified classes are due to WordPress :-(
+ */
+
+body.login {
+  background: rgb(119,120,122); /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, rgb(119,120,122) 0%, rgb(67,68,70) 100%); /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgb(119,120,122)), color-stop(100%,rgb(67,68,70))); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover, rgb(119,120,122) 0%,rgb(67,68,70) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover, rgb(119,120,122) 0%,rgb(67,68,70) 100%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover, rgb(119,120,122) 0%,rgb(67,68,70) 100%); /* IE10+ */
+  background: radial-gradient(ellipse at center, rgb(119,120,122) 0%,rgb(67,68,70) 100%); /* W3C */
+}
+
+body.login div#login {
+
+}
+
+.login h1 {
+  margin-bottom: 0.5em;
+  margin-left: 8px;
+  padding: 0 24px;
+}
+
+.login h1 a {
+  width: auto;
+  height: auto;
+  background-image: none;
+  text-indent: 0;
+
+}
+
+.login form {
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+
+.login label {
+  margin-bottom: 0.5em;
+  color: inherit;
+}
+
+.login #nav,
+.login #backtoblog{
+  text-shadow: none;
+}
+
+.login #nav a,
+.login #backtoblog a {
+  color: inherit !important; //  Again to combat WordPress :-(
+}
+
+.login form .input {
+  margin: inherit;
+  padding: inherit;
+  border-radius: 0;
+  font-size: inherit;
+  line-height: inherit;
+}

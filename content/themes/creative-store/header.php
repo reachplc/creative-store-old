@@ -1,14 +1,4 @@
 <?php
-/**
- * The Header for our theme.
- *
- * Displays all of the <head> section and everything up till <main id="main">
- *
- * @package creative-store
- */
-?>
-
-<?php
 
 /**
  * Require login for site
@@ -20,6 +10,17 @@ if (!is_user_logged_in()) {
 }
 
 ?>
+<?php
+/**
+ * The Header for our theme.
+ *
+ * Displays all of the <head> section and everything up till <main id="main">
+ *
+ * @package creative-store
+ */
+?>
+
+
 
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
