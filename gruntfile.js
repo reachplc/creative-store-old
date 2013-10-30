@@ -10,6 +10,7 @@ module.exports = function(grunt) {
         }
        ,files: {
           'content/themes/creative-store/style.css': ['content/themes/creative-store/less/global.less']
+         ,'content/themes/creative-store/login.css': ['content/themes/creative-store/less/login.less']
         }
       }
     }

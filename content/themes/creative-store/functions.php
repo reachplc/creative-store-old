@@ -108,7 +108,33 @@ function wpb_adding_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts' );
 
+/**
+ * Login Page
+ */
 
+//  Update logo URL to point towards DI
+
+add_filter( 'login_headerurl', 'custom_login_header_url' );
+
+function custom_login_header_url($url) {
+  $_url = esc_url( home_url( '/' ) );
+  return $_url;
+}
+
+//  Add custom login stylesheet
+
+function my_login_stylesheet() {
+    echo '<link rel="stylesheet" id="custom_wp_admin_css"  href="' . get_bloginfo( 'stylesheet_directory' ) . '/login.css">';
+ }
+add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
+
+//  Remove lost password text
+
+function remove_lostpassword_text ( $text ) {
+     if ($text == 'Lost your password?'){$text = '';}
+        return $text;
+     }
+add_filter( 'gettext', 'remove_lostpassword_text' );
 
 /**
  * WooCommerce scripts and styles

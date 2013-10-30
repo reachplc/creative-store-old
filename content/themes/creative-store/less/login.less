@@ -1,0 +1,72 @@
+/*
+Theme Name: creative-store
+Theme URI: http://underscores.me/
+Author: Michael Bragg
+Author URI: http://michaelbragg.net
+*/
+
+//  Base
+
+@import '_variables.less';
+
+@import 'base/_layout.less';
+@import 'base/_typography.less';
+@import 'base/_list.less';
+@import 'base/_form.less';
+@import 'base/_table.less';
+@import 'base/_media.less';
+
+
+/* =Global
+----------------------------------------------- */
+
+img {
+  height: auto; /* Make sure images are scaled correctly. */
+  max-width: 100%; /* Adhere to container width. */
+}
+
+//  Objects
+//  Reusable CSS pattens
+
+//  @import 'objects/_example.less';
+
+//  To extend the styling of these objects, create a folder called styles to store
+//  the less files and import below under the Styling header
+
+//  Styling
+//  Control the look and feel of the objects
+
+@import 'styles/_header.less';
+@import 'styles/_footer.less';
+@import 'styles/_form.less';
+@import 'styles/_login.less';
+@import 'styles/_grid.less';
+
+/* Text meant only for screen readers */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto;
+  color: #21759b;
+  display: block;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar */
+}
+
+@import 'base/_core.less';
+
