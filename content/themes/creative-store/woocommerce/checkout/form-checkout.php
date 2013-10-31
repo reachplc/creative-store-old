@@ -46,7 +46,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', $woocommerce-
     <?php
       $order_button_text = apply_filters('woocommerce_order_button_text', __( 'Place order', 'woocommerce' ));
 
-      echo apply_filters('woocommerce_order_button_html', '<input type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="' . $order_button_text . '" />' );
+      echo apply_filters('woocommerce_order_button_html', '<input type="submit" class="button button--primary alt" name="woocommerce_checkout_place_order" id="place_order" value="' . $order_button_text . '" />' );
     ?>
 
   <?php endif; ?>
