@@ -1,0 +1,31 @@
+/* objects/_button.less
+ *
+ */
+
+.button {
+  display: inline-block;
+  margin-bottom: 1em;
+  padding: 0 1.5em;
+  border: none;
+  -webkit-border-radius: 0.1875em;
+          border-radius: 0.1875em;
+  line-height: 2.5em;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+  text-decoration: none;
+}
+
+.button--disabled,
+.button[disabled] {
+  cursor: default;
+}
+
+//  Button Large
+
+.button__large {
+  padding: 0.75em;
+  line-height: 1.5em;
+}
