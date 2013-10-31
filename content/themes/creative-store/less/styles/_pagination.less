@@ -38,13 +38,13 @@
   margin-left: 0.5em;
   padding-right: 1.5em;
   padding-left: 1.5em;
+  background: @color--interact;
+  color: @color--white;
   line-height: 3em;
-  background: #1bc4e5;
 
 &:hover,
 &:focus {
-    background: darken(#1bc4e5, 10%);
-    color: #fff;
+    background: @color--hover;
   }
 
 }
@@ -52,5 +52,6 @@
 //  Styles the current page
 .woocommerce-pagination > ul > li > .current {
   background: darken(#1bc4e5, 10%);
+  color: @color--white;
   cursor: default;  //  Hides text cursor on hover
 }
