@@ -43,6 +43,7 @@ module.exports = function(grunt) {
         ,"box-sizing": false
         ,"regex-selectors": false
         ,"universal-selector": false
+        ,"font-sizes": false  //  Until CSSLint has the option to set an ammount
       }
       ,files: {
         src: ['content/themes/creative-store/style.css']
