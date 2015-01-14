@@ -1,12 +1,20 @@
-/local-config.php
-/wp-config.php
-/shared
+# Creative Store
 
-#  NodeJS
+## Site
+web/.htaccess
+
+## NodeJS
 
 node_modules/
+npm_logs.txt
 
-#  CSS
+## WordPress
 
-content/themes/creative-store/style.css
-content/themes/creative-store/login.css
+web/local-config.php
+web/wp-config.php
+web/shared
+
+### Creative Store Theme
+
+web/content/themes/creative-store/style.css
+web/content/themes/creative-store/login.css
