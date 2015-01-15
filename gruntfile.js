@@ -89,13 +89,13 @@ module.exports = function(grunt) {
         command: 'mkdir -m 755 -p ~/domains/creativestore.trinitymirror.com/releases/' + dirname
       },
       'current-symlink': {
-        command: 'rm -rf ~/domains/creativestore.trinitymirror.com/html && ln -s /creativestore.trinitymirror.com/releases/' + dirname + ' /creativestore.trinitymirror.com/html'
+        command: 'rm -rf ~/domains/creativestore.trinitymirror.com/html && ln -s ~/domains/creativestore.trinitymirror.com/releases/' + dirname + ' /creativestore.trinitymirror.com/html'
       },
       'shared-symlink': {
-        command: 'ln -s ~/domains/creativestore.trinitymirror.com/shared/uploads /creativestore.trinitymirror.com/releases/' + dirname + '/content/uploads'
+        command: 'ln -s ~/domains/creativestore.trinitymirror.com/shared/uploads ~/domains/creativestore.trinitymirror.com/releases/' + dirname + '/content/uploads'
       },
       'move-config': {
-        command: 'mv -f ~/domains/creativestore.trinitymirror.com/releases/' + dirname + '/config/master.htaccess /creativestore.trinitymirror.com/releases/' + dirname + '/.htaccess && mv -f /creativestore.trinitymirror.com/releases/' + dirname + '/config/master.wp-config.php /creativestore.trinitymirror.com/releases/' + dirname + '/.wp-config.php && rm -rf /creativestore.trinitymirror.com/releases/' + dirname + '/config'
+        command: 'mv -f ~/domains/creativestore.trinitymirror.com/releases/' + dirname + '/config/master.htaccess ~/domains/creativestore.trinitymirror.com/releases/' + dirname + '/.htaccess && mv -f ~/domains/creativestore.trinitymirror.com/releases/' + dirname + '/config/master.wp-config.php ~/domains/creativestore.trinitymirror.com/releases/' + dirname + '/.wp-config.php && rm -rf ~/domains/creativestore.trinitymirror.com/releases/' + dirname + '/config'
       }
     }
 
