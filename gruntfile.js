@@ -75,8 +75,7 @@ module.exports = function(grunt) {
     // Config settings for each deployment location
     ,sshconfig: {
       production: {
-        host: '<%= grunt.option("server") %>',
-        port: 22,
+        host: '<%= grunt.option("host") %>',
         username: '<%= grunt.option("username") %>',
         password: '<%= grunt.option("password") %>',
         path: '~/domains/creativestore.trinitymirror.com/releases/' + dirname + '/',
@@ -100,7 +99,7 @@ module.exports = function(grunt) {
       }
     }
 
-    // SFTP Commands
+   // SFTP Commands
    ,sftp: {
       deploy: {
         files: {
@@ -237,4 +236,3 @@ module.exports = function(grunt) {
   grunt.registerTask('deploy', ['sshexec:make-release-dir', 'sftp:deploy', 'sshexec:move-config', 'sshexec:shared-symlink']);
 
 };
-
