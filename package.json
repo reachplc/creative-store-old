@@ -28,8 +28,8 @@
   "main": "gruntfile.js",
   "devDependencies": {
     "grunt": "0.4.x",
-    "grunt-autoprefixer": "2.1.x",
     "grunt-cli": "0.1.x",
+    "grunt-autoprefixer": "2.1.x",
     "grunt-contrib-csslint": "0.3.x",
     "grunt-contrib-imagemin": "0.9.x",
     "grunt-contrib-jshint": "0.10.x",
