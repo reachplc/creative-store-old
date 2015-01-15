@@ -103,10 +103,10 @@ module.exports = function(grunt) {
    ,sftp: {
       deploy: {
         files: {
-          './': ['~/clone/config/**/*', '~/clone/web/index.php', '~/clone/web/content/**/*', '~/clone/web/system/**/*']
+          '~/clone/': ['config/**/*', 'web/index.php', 'web/content/**/*', 'web/system/**/*']
         },
         options: {
-          srcBasePath: '~/clone/web/',
+          srcBasePath: '~/clone',
           showProgress: true,
           createDirectories: true,
           directoryPermissions: parseInt(755, 8)
