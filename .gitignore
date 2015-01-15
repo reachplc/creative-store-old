@@ -6,7 +6,7 @@ web/.htaccess
 ## NodeJS
 
 node_modules/
-npm_logs.txt
+npm-debug.log
 
 ## WordPress
 
