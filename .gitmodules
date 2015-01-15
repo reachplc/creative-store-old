@@ -1,6 +1,6 @@
-[submodule "system"]
-	path = system
+[submodule "web/system"]
+	path = web/system
 	url = https://github.com/WordPress/WordPress.git
-[submodule "content/plugins/woocommerce"]
-	path = content/plugins/woocommerce
+[submodule "web/content/plugins/woocommerce"]
+	path = web/content/plugins/woocommerce
 	url = https://github.com/woothemes/woocommerce.git
