@@ -226,10 +226,10 @@ module.exports = function(grunt) {
 
   // Options
 
-  grunt.registerTask('default', ['serve']);
+  grunt.registerTask('default', ['recess', 'serve']);
   grunt.registerTask('test', ['phplint','cssmetrics', 'csslint', 'jshint']);
   grunt.registerTask('optim', ['imagemin']);
-  //grunt.registerTask('dev', ['less']);
+  grunt.registerTask('dev', ['recess']);
   grunt.registerTask('build', ['recess', 'optim']);
   grunt.registerTask('serve', ['watch']);
   // Deployment options
