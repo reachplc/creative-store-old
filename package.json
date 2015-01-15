@@ -1,28 +1,55 @@
 {
-  "name": "creative-store",
-  "version": "0.0.0",
+  "name": "Creative-Store",
+  "license": "",
   "private": true,
-  "description": "WordPress theme for the Creative Store site.",
-  "keywords": [
-    "wordpress",
-    "creative-store"
-  ],
-  "author": "Trinity Mirror Creative",
+  "version": "0.1.0",
+  "description": "WordPress website for the Creative Store site",
+  "homepage": "https://github.com/trinitymirror/creative-store/",
+  "readme": "[ReadMe](/readme.md)",
+  "readmeFilename": "readme.md",
+  "author": {
+    "name": "Trinity Mirror Creative"
+  },
   "contributors": [
     {
       "name": "Michael Bragg",
-      "email": "michael@michaelbragg.net"
+      "email": "michael@michaelbragg.net",
+      "url": "http://michaelbragg.net"
+    },
+    {
+      "name": "Daniel Richardson",
+      "email": "daniel.richardson@trinitymirror.com"
+    },
+    {
+      "name": "Jonathan Masters",
+      "email": "jonathan.masters@trinitymirror.com"
     }
   ],
-  "license": "MIT",
-  "scripts": {
-    "test": "grunt ci-test --verbose"
-  },
+  "main": "gruntfile.js",
   "devDependencies": {
     "grunt": "0.4.x",
-    "grunt-contrib-less": "0.7.x",
-    "grunt-contrib-watch": "0.5.x",
-    "grunt-contrib-jshint": "0.6.x",
-    "grunt-contrib-csslint": "0.1.x"
+    "grunt-autoprefixer": "2.1.x",
+    "grunt-cli": "0.1.x",
+    "grunt-contrib-csslint": "0.3.x",
+    "grunt-contrib-imagemin": "0.9.x",
+    "grunt-contrib-jshint": "0.10.x",
+    "grunt-contrib-less": "1.0.x",
+    "grunt-contrib-watch": "0.6.x",
+    "grunt-css-metrics": "0.1.x",
+    "grunt-htmlhint": "0.4.x",
+    "grunt-phplint": "0.0.x",
+    "grunt-recess": "1.0.x",
+    "grunt-ssh": "0.12.x"
+  },
+  "scripts": {
+    "test": "grunt test",
+    "deploy": "grunt deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trinitymirror/creative-store.git"
+  },
+  "bugs": {
+    "url": "https://github.com/trinitymirror/creative-store/issues"
   }
 }
