@@ -78,6 +78,7 @@ module.exports = function(grunt) {
         host: '<%= grunt.option("server") %>',
         port: 22,
         username: '<%= grunt.option("username") %>',
+        password: '<%= grunt.option("password") %>',
         path: '~/domains/creativestore.trinitymirror.com/releases/' + dirname + '/',
         //privateKey: grunt.file.read('/home/rof/.ssh/id_rsa')
       }
