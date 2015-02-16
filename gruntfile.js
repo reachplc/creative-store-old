@@ -70,15 +70,18 @@ module.exports = function(grunt) {
       }
     }
 
+
   // Deployment
+  // grunt deploy --config production --server xxx --username xxxx
 
     // Config settings for each deployment location
     ,sshconfig: {
       production: {
         host: '<%= grunt.option("host") %>',
+        port: 22,
         username: '<%= grunt.option("username") %>',
         password: '<%= grunt.option("password") %>',
-        path: '~/domains/creativestore.trinitymirror.com/releases/' + dirname + '/',
+        agentForward: true,
         showProgress: true
       }
     }
@@ -86,27 +89,33 @@ module.exports = function(grunt) {
     // SSH commands to be used
    ,sshexec: {
       'make-release-dir': {
-        command: 'mkdir -m 755 -p ~/domains/creativestore.trinitymirror.com/releases/' + dirname
-      },
+        command: 'mkdir -m 755 -p ~/domains/creativestore.trinitymirror.com/releases/' + dirname      },
       'current-symlink': {
-        command: 'rm -rf ~/domains/creativestore.trinitymirror.com/html && ln -s ~/domains/creativestore.trinitymirror.com/releases/' + dirname + ' /creativestore.trinitymirror.com/html'
+        command: [
+          'rm -rf ~/domains/creativestore.trinitymirror.com/html',
+          'ln -s ~/domains/creativestore.trinitymirror.com/releases/' + dirname + ' ~/domains/creativestore.trinitymirror.com/html'
+        ]
       },
       'shared-symlink': {
         command: 'ln -s ~/domains/creativestore.trinitymirror.com/shared/uploads ~/domains/creativestore.trinitymirror.com/releases/' + dirname + '/content/uploads'
       },
       'move-config': {
-        command: 'mv -f ~/domains/creativestore.trinitymirror.com/releases/' + dirname + '/config/master.htaccess ~/domains/creativestore.trinitymirror.com/releases/' + dirname + '/.htaccess && mv -f ~/domains/creativestore.trinitymirror.com/releases/' + dirname + '/config/master.wp-config.php ~/domains/creativestore.trinitymirror.com/releases/' + dirname + '/.wp-config.php && rm -rf ~/domains/creativestore.trinitymirror.com/releases/' + dirname + '/config'
+        command: [
+          'mv -f ~/domains/creativestore.trinitymirror.com/releases/' + dirname + '/config/master.htaccess ~/domains/creativestore.trinitymirror.com/releases/' + dirname + '/.htaccess',
+          'mv -f ~/domains/creativestore.trinitymirror.com/releases/' + dirname + '/config/master.wp-config.php ~/domains/creativestore.trinitymirror.com/releases/' + dirname + '/wp-config.php',
+          'rm -rf ~/domains/creativestore.trinitymirror.com/releases/' + dirname + '/config'
+        ]
       }
     }
 
-   // SFTP Commands
+    // SFTP Commands
    ,sftp: {
       deploy: {
         files: {
-          '~/clone/': ['config/**/*', 'web/index.php', 'web/content/**/*', 'web/system/**/*']
+          './': ['config/**/*', 'web/index.php', 'web/content/**/*', 'web/system/**/*']
         },
         options: {
-          srcBasePath: '~/clone',
+          srcBasePath: '~/clone/web/',
           showProgress: true,
           createDirectories: true,
           directoryPermissions: parseInt(755, 8)
@@ -233,6 +242,6 @@ module.exports = function(grunt) {
   grunt.registerTask('build', ['recess', 'optim']);
   grunt.registerTask('serve', ['watch']);
   // Deployment options
-  grunt.registerTask('deploy', ['sshexec:make-release-dir', 'sftp:deploy', 'sshexec:move-config', 'sshexec:shared-symlink']);
+  grunt.registerTask('deploy', ['sshexec:make-release-dir', 'sftp:deploy', 'sshexec:move-config', 'sshexec:shared-symlink', 'sshexec:current-symlink']);
 
 };
