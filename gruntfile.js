@@ -248,7 +248,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['recess', 'serve']);
   grunt.registerTask('test', ['cssmetrics', 'csslint', 'jshint']);
-  grunt.registerTask('standard' ['phplint', 'phpcs']);
+  grunt.registerTask('standard', ['phplint', 'phpcs']);
   grunt.registerTask('optim', ['imagemin']);
   grunt.registerTask('dev', ['recess']);
   grunt.registerTask('build', ['recess', 'optim']);
