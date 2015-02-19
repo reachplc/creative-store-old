@@ -39,7 +39,8 @@
     "grunt-htmlhint": "0.4.x",
     "grunt-phplint": "0.0.x",
     "grunt-recess": "1.0.x",
-    "grunt-ssh": "0.12.x"
+    "grunt-ssh": "0.12.x",
+    "grunt-phpcs": "0.2.x"
   },
   "scripts": {
     "test": "grunt test",

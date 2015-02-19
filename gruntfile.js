@@ -81,15 +81,16 @@ module.exports = function(grunt) {
         port: 22,
         username: '<%= grunt.option("username") %>',
         password: '<%= grunt.option("password") %>',
-        agentForward: true,
-        showProgress: true
+        path: '/home/192821/users/.home/domains/creativestore.trinitymirror.com/releases/' + dirname + '/',
+        //showProgress: true
       }
     }
 
     // SSH commands to be used
    ,sshexec: {
       'make-release-dir': {
-        command: 'mkdir -m 755 -p ~/domains/creativestore.trinitymirror.com/releases/' + dirname      },
+        command: 'mkdir -m 755 -p ~/domains/creativestore.trinitymirror.com/releases/' + dirname
+      },
       'current-symlink': {
         command: [
           'rm -rf ~/domains/creativestore.trinitymirror.com/html',
@@ -115,8 +116,8 @@ module.exports = function(grunt) {
           './': ['config/**/*', 'web/index.php', 'web/content/**/*', 'web/system/**/*']
         },
         options: {
-          srcBasePath: '~/clone/web/',
-          showProgress: true,
+          srcBasePath: 'web/',
+          //showProgress: true,
           createDirectories: true,
           directoryPermissions: parseInt(755, 8)
         }
@@ -197,6 +198,15 @@ module.exports = function(grunt) {
       src: ['gruntfile.js']
     }
 
+    ,phpcs: {
+      theme: {
+        dir: ['<%= dir.theme %>/*.php']
+       ,options: {
+          standard: '<%= dir.theme %>/codesniffer.ruleset.xml'
+       }
+      }
+    }
+
    ,phplint: {
       theme: ['<%= dir.theme %>/**/*.php']
      ,plugin: ['<%= dir.plugin %>/**/*.php']
@@ -229,6 +239,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-css-metrics');
+  grunt.loadNpmTasks('grunt-phpcs');
   grunt.loadNpmTasks('grunt-phplint');
   grunt.loadNpmTasks('grunt-recess');
   grunt.loadNpmTasks('grunt-ssh');
@@ -236,12 +247,13 @@ module.exports = function(grunt) {
   // Options
 
   grunt.registerTask('default', ['recess', 'serve']);
-  grunt.registerTask('test', ['phplint','cssmetrics', 'csslint', 'jshint']);
+  grunt.registerTask('test', ['cssmetrics', 'csslint', 'jshint']);
+  grunt.registerTask('standard' ['phplint', 'phpcs']);
   grunt.registerTask('optim', ['imagemin']);
   grunt.registerTask('dev', ['recess']);
   grunt.registerTask('build', ['recess', 'optim']);
   grunt.registerTask('serve', ['watch']);
   // Deployment options
-  grunt.registerTask('deploy', ['sshexec:make-release-dir', 'sftp:deploy', 'sshexec:move-config', 'sshexec:shared-symlink', 'sshexec:current-symlink']);
+  grunt.registerTask('deploy', ['sshexec:make-release-dir', 'sftp:deploy', 'sshexec:move-config', 'sshexec:shared-symlink', /*'sshexec:current-symlink'*/]);
 
 };
