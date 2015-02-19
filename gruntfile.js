@@ -200,10 +200,13 @@ module.exports = function(grunt) {
 
     ,phpcs: {
       theme: {
-        dir: ['<%= dir.theme %>/*.php']
+        dir: ['<%= dir.theme %>/**/*.php']
        ,options: {
           standard: '<%= dir.theme %>/codesniffer.ruleset.xml'
-       }
+        }
+      }
+     ,options: {
+        bin: 'phpcs'
       }
     }
 
