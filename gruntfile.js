@@ -106,6 +106,11 @@ module.exports = function(grunt) {
           'mv -f ~/domains/creativestore.trinitymirror.com/releases/' + dirname + '/config/master.wp-config.php ~/domains/creativestore.trinitymirror.com/releases/' + dirname + '/wp-config.php',
           'rm -rf ~/domains/creativestore.trinitymirror.com/releases/' + dirname + '/config'
         ]
+      },
+      'cleanup': {
+        command: [
+          'rm -rf `ls -t ~/domains/creativestore.trinitymirror.com/releases/ | tail -n +4`'
+        ]
       }
     }
 
@@ -257,6 +262,6 @@ module.exports = function(grunt) {
   grunt.registerTask('build', ['recess', 'optim']);
   grunt.registerTask('serve', ['watch']);
   // Deployment options
-  grunt.registerTask('deploy', ['sshexec:make-release-dir', 'sftp:deploy', 'sshexec:move-config', 'sshexec:shared-symlink', /*'sshexec:current-symlink'*/]);
+  grunt.registerTask('deploy', ['sshexec:make-release-dir', 'sftp:deploy', 'sshexec:move-config', 'sshexec:shared-symlink', 'sshexec:current-symlink'/*, 'cleanup'*/]);
 
 };
