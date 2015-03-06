@@ -94,7 +94,9 @@ module.exports = function(grunt) {
       'current-symlink': {
         command: [
           'rm -rf ~/domains/creativestore.trinitymirror.com/html',
-          'ln -s ~/domains/creativestore.trinitymirror.com/releases/' + dirname + ' ~/domains/creativestore.trinitymirror.com/html'
+          'cd ~/~/domains/creativestore.trinitymirror.com',
+          'ln -s releases/' + dirname + ' html',
+          'cd ~/'
         ]
       },
       'shared-symlink': {
