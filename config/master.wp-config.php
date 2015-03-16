@@ -20,10 +20,10 @@
  * Load database info and local development parameters
  */
 define( 'WP_LOCAL_DEV', false );
-define( 'DB_NAME', 'candd' );
-define( 'DB_USER', 'root' );
-define( 'DB_PASSWORD', 'EshrytIdDT' );
-define( 'DB_HOST', 'localhost' ); // Probably 'localhost'
+define( 'DB_NAME', 'db192821_creativestore' );
+define( 'DB_USER', 'db192821_tm' );
+define( 'DB_PASSWORD', 'zJgHZdsxV4VH>cQ?he8b' );
+define( 'DB_HOST', $_ENV['DATABASE_SERVER'] ); // Probably 'localhost'
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
