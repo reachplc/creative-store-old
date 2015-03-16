@@ -4,9 +4,9 @@
  * Require login for site
  */
 
-if (!is_user_logged_in()) {
-  header('Location: '.wp_login_url(get_permalink()));
-  exit;
+if ( ! is_user_logged_in() ) {
+	header( 'Location: '.wp_login_url( get_permalink() ) );
+	exit;
 }
 
 ?>
@@ -36,9 +36,9 @@ if (!is_user_logged_in()) {
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-  <?php do_action( 'before' ); ?>
+    <?php do_action( 'before' ); ?>
 
-<div class="screen-reader-text skip-link"><a href="#content" title="<?php #esc_attr_e( 'Skip to content', 'creative-store' ); ?>"><?php #_e( 'Skip to content', 'creative-store' ); ?></a></div>
+<div class="screen-reader-text skip-link"><a href="#content" title="<?php // esc_attr_e( 'Skip to content', 'creative-store' ); ?>"><?php // _e( 'Skip to content', 'creative-store' ); ?></a></div>
 
   <nav id="js-nav" class="nav-main nav-main__nav" role="navigation">
 <?php get_sidebar(); ?>
@@ -52,16 +52,16 @@ if (!is_user_logged_in()) {
     </div>
 
     <nav id="site-navigation" class="main-navigation">
-    <img id="js-nav-button" class="icon--navicon" src="<?php echo bloginfo('stylesheet_directory'); ?>/gui/navicon.png" alt="Navigation">
+    <img id="js-nav-button" class="icon--navicon" src="<?php echo bloginfo( 'stylesheet_directory' ); ?>/gui/navicon.png" alt="Navigation">
     </nav><!-- #site-navigation -->
 
       <div class='user'>
         <?php
-          $current_user = wp_get_current_user();
-          if ( is_user_logged_in() ) {  // If logged in:
-            echo 'Welcome back ' . $current_user->user_login ;
-          }
-        ?>
+		  $current_user = wp_get_current_user();
+		if ( is_user_logged_in() ) {  // If logged in:
+			echo 'Welcome back ' . $current_user->user_login ;
+		}
+		?>
       </div>
     </div>
 
