@@ -121,6 +121,13 @@ function wpb_adding_scripts()
 
 add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts' );
 
+function creative_store_fonts() {
+	wp_register_style( 'googleFonts', 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,800italic,400,300,800' );
+	wp_enqueue_style( 'googleFonts' );
+}
+
+add_action( 'wp_print_styles', 'creative_store_fonts' );
+
 /**
  * Login Page
  */
