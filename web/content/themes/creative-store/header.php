@@ -59,7 +59,7 @@ if ( ! is_user_logged_in() ) {
         <?php
 		  $current_user = wp_get_current_user();
 		if ( is_user_logged_in() ) {  // If logged in:
-			echo 'Welcome back ' . $current_user->user_login ;
+			echo esc_html( 'Welcome ' . $current_user->display_name );
 		}
 		?>
       </div>
