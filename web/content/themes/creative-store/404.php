@@ -40,8 +40,7 @@ get_header(); ?>
 		?>
 						</ul>
 					</div><!-- .widget -->
-        <?php
-endif; ?>
+        <?php endif; ?>
 
         <?php
 		/* translators: %1$s: smiley */

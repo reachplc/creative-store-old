@@ -8,20 +8,16 @@
  */
 ?>
 
-  </div><!--/ #content -->
+	</div><!--/ #content -->
 
-  <footer id="colophon" class="footer__main cf" role="contentinfo">
+	<footer id="colophon" class="footer__main cf" role="contentinfo">
 
-    <div class="wrapper">
-      <small class="site-info">
-        Copyright &copy; Trinity Mirror plc
-      </small><!--/ .site-info -->
-      <small class="brand">
-      Trinity Mirror plc
-      </small><!--/ .brand  -->
-    </div><!--/ .wrapper  -->
+		<div class="wrapper">
+			<small class="site-info">Copyright &copy; Trinity Mirror plc</small><!--/ .site-info -->
+			<small class="brand">Trinity Mirror plc</small><!--/ .brand  -->
+		</div><!--/ .wrapper  -->
 
-  </footer><!--/ #colophon -->
+	</footer><!--/ #colophon -->
 
 </div><!--/ #page -->
 

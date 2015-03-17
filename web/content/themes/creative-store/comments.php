@@ -22,9 +22,9 @@ if ( post_password_required() ) {
 
 	<div id="comments" class="comments-area">
 
-    <?php // You can start editing here -- including this comment! ?>
+		<?php // You can start editing here -- including this comment! ?>
 
-    <?php if ( have_comments() ) : ?>
+		<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
     <?php
 				printf(
@@ -40,7 +40,7 @@ if ( post_password_required() ) {
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'creative-store' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'creative-store' ) ); ?></div>
 		</nav><!-- #comment-nav-above -->
-    <?php
+		<?php
 endif; // check for comment navigation ?>
 
 		<ol class="comment-list">
@@ -61,7 +61,7 @@ endif; // check for comment navigation ?>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'creative-store' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'creative-store' ) ); ?></div>
 		</nav><!-- #comment-nav-below -->
-    <?php
+		<?php
 endif; // check for comment navigation ?>
 
     <?php
@@ -71,10 +71,10 @@ endif; // have_comments() ?>
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-    <p class="no-comments"><?php _e( 'Comments are closed.', 'creative-store' ); ?></p>
-    <?php
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'creative-store' ); ?></p>
+		<?php
 	endif; ?>
 
-    <?php comment_form(); ?>
+		<?php comment_form(); ?>
 
 </div><!-- #comments -->

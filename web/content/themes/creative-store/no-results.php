@@ -18,17 +18,16 @@
 
 			<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'creative-store' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
 
-    <?php elseif ( is_search() ) : ?>
+		<?php elseif ( is_search() ) : ?>
 
 			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'creative-store' ); ?></p>
-    <?php get_search_form(); ?>
+		<?php get_search_form(); ?>
 
-    <?php else : ?>
+		<?php else : ?>
 
 			<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'creative-store' ); ?></p>
-    <?php get_search_form(); ?>
+		<?php get_search_form(); ?>
 
-    <?php
-endif; ?>
+		<?php endif; ?>
 	</div><!-- .page-content -->
 </section><!-- .no-results -->

@@ -25,14 +25,14 @@ get_header(); ?>
 
 						elseif ( is_author() ) :
 							/* Queue the first post, that way we know
-                            * what author we're dealing with (if that is the case).
-                            */
+							 * what author we're dealing with (if that is the case).
+							 */
 							the_post();
 							printf( __( 'Author: %s', 'creative-store' ), '<span class="vcard">' . get_the_author() . '</span>' );
 							/* Since we called the_post() above, we need to
-                            * rewind the loop back to the beginning that way
-                            * we can run the loop properly, in full.
-                            */
+							 * rewind the loop back to the beginning that way
+							 * we can run the loop properly, in full.
+							 */
 							rewind_posts();
 
 						elseif ( is_day() ) :
@@ -70,7 +70,7 @@ get_header(); ?>
 				$term_description = term_description();
 				if ( ! empty( $term_description ) ) :
 					printf( '<div class="taxonomy-description">%s</div>', $term_description );
-	endif;
+				endif;
 				?>
 			</header><!-- .page-header -->
 
@@ -85,17 +85,15 @@ get_header(); ?>
 					get_template_part( 'content', get_post_format() );
 				?>
 
-    <?php
-endwhile; ?>
+    <?php endwhile; ?>
 
-    <?php creative_store_content_nav( 'nav-below' ); ?>
+		<?php creative_store_content_nav( 'nav-below' ); ?>
 
-    <?php else : ?>
+		<?php else : ?>
 
-    <?php get_template_part( 'no-results', 'archive' ); ?>
+		<?php get_template_part( 'no-results', 'archive' ); ?>
 
-    <?php
-endif; ?>
+    <?php endif; ?>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
