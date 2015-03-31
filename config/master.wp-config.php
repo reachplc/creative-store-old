@@ -26,10 +26,10 @@ define( 'DB_PASSWORD', 'zJgHZdsxV4VH>cQ?he8b' );
 define( 'DB_HOST', $_ENV['DATABASE_SERVER'] ); // Probably 'localhost'
 
 /** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8');
+define( 'DB_CHARSET', 'utf8' );
 
 /** The Database Collate type. Don't change this if in doubt. */
-define('DB_COLLATE', '');
+define( 'DB_COLLATE', '' );
 
 /**
  * Custom Content Directory
@@ -47,14 +47,14 @@ define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/content' );
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'HeotDiUfyeYldIrdjFEW');
-define('SECURE_AUTH_KEY',  'WryntEgubdAdjIkEqRTI');
-define('LOGGED_IN_KEY',    'gaigoAfrIakePciFcZLD');
-define('NONCE_KEY',        'lumvUcPaghOfvuBMpTPi');
-define('AUTH_SALT',        'yEhowMaplAgriVkiqsLF');
-define('SECURE_AUTH_SALT', 'alpuThNisutoBoVsecFA');
-define('LOGGED_IN_SALT',   'IbVikahafsIcnIrIJvzE');
-define('NONCE_SALT',       'vadjosBavateckHBdSHu');
+define( 'AUTH_KEY',         'HeotDiUfyeYldIrdjFEW' );
+define( 'SECURE_AUTH_KEY',  'WryntEgubdAdjIkEqRTI' );
+define( 'LOGGED_IN_KEY',    'gaigoAfrIakePciFcZLD' );
+define( 'NONCE_KEY',        'lumvUcPaghOfvuBMpTPi' );
+define( 'AUTH_SALT',        'yEhowMaplAgriVkiqsLF' );
+define( 'SECURE_AUTH_SALT', 'alpuThNisutoBoVsecFA' );
+define( 'LOGGED_IN_SALT',   'IbVikahafsIcnIrIJvzE' );
+define( 'NONCE_SALT',       'vadjosBavateckHBdSHu' );
 
 /**#@-*/
 
@@ -74,13 +74,13 @@ $table_prefix  = 'tmcs_';
  * For example, install de_DE.mo to wp-content/languages and set
  * WPLANG to 'de_DE' to enable German language support.
  */
-define('WPLANG', '');
+define( 'WPLANG', '' );
 
 /**
  * Enable W3 Total Cache
  * Added by W3 Total Cache
  */
-define('WP_CACHE', false);
+define( 'WP_CACHE', false );
 
 /**
  * WordPress Default Theme
@@ -96,17 +96,17 @@ define( 'WP_DEFAULT_THEME', 'creative-store' );
  * development. It is strongly recommended that plugin and theme
  * developers use WP_DEBUG in their development environments.
  */
-define('WP_DEBUG', false);
+define( 'WP_DEBUG', false );
 
 /**
  * Reduce number of revisions saved
  */
-define('WP_POST_REVISIONS', 3);
+define( 'WP_POST_REVISIONS', 3 );
 
 /**
  * Increase PHP memory limit if possible
  */
-define('WP_MEMORY_LIMIT', '96M');
+define( 'WP_MEMORY_LIMIT', '96M' );
 
 /**
  * Disallow themes and plugins to be edited via the Admin console.
@@ -117,8 +117,9 @@ define( 'DISALLOW_FILE_EDIT', true );
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
-if ( !defined('ABSPATH') )
-  define('ABSPATH', dirname(__FILE__) . '/');
+if ( ! defined( 'ABSPATH' ) ) {
+	define( 'ABSPATH', dirname( __FILE__ ) . '/' );
+}
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
