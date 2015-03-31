@@ -56,6 +56,9 @@ cd ../../
 git add web/system
 git commit -m "Update WordPress to x.x.x"
 ```
+### Testing
+
+To test your changes before deploying merge any changes in to `beta` this will deploy them to our beta testing server.
 
 ### Deploying
 
