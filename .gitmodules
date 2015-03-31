@@ -7,3 +7,6 @@
 [submodule "web/content/plugins/wp-oauth"]
 	path = web/content/plugins/wp-oauth
 	url = https://github.com/trinitymirror/WP-OAuth.git
+[submodule "web/content/mu-plugins/WP-API"]
+	path = web/content/mu-plugins/WP-API
+	url = https://github.com/WP-API/WP-API.git

@@ -20,7 +20,7 @@
  * Load database info and local development parameters
  */
 define( 'WP_LOCAL_DEV', false );
-define( 'DB_NAME', 'db192821_creativestore' );
+define( 'DB_NAME', 'db192821_beta_creativestore' );
 define( 'DB_USER', 'db192821_tm' );
 define( 'DB_PASSWORD', 'zJgHZdsxV4VH>cQ?he8b' );
 define( 'DB_HOST', $_ENV['DATABASE_SERVER'] ); // Probably 'localhost'

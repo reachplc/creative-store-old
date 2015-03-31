@@ -34,7 +34,7 @@ Activate the sub-modules.
 git submodule update --init --recursive
 ```
 
-Copy the `./_scripts/sample.wp-config` file to the `creative-store/web/` folder and rename it `wp-config.php`.
+Copy the `./scripts/sample.wp-config` file to the `creative-store/web/` folder and rename it `wp-config.php`.
 
 Fill in the `wp-config.php` with your local MySQL database details.
 
@@ -56,6 +56,9 @@ cd ../../
 git add web/system
 git commit -m "Update WordPress to x.x.x"
 ```
+### Testing
+
+To test your changes before deploying merge any changes in to `beta` this will deploy them to our beta testing server.
 
 ### Deploying
 
