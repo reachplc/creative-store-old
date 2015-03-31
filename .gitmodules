@@ -10,3 +10,6 @@
 [submodule "web/content/mu-plugins/WP-API"]
 	path = web/content/mu-plugins/WP-API
 	url = https://github.com/WP-API/WP-API.git
+[submodule "web/content/plugins/wp-sitemap-page"]
+	path = web/content/plugins/wp-sitemap-page
+	url = https://github.com/wp-plugins/wp-sitemap-page.git
