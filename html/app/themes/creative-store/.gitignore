@@ -1,0 +1,14 @@
+.DS_Store
+
+style.css
+style.css.map
+/gui
+/js
+
+# PHP
+/vendor
+composer.lock
+
+# NodeJS
+
+/node_modules

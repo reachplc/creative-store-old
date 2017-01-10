@@ -1,0 +1,15 @@
+/**
+ * Utilities: Borders.
+ */
+
+.u-border-thin {
+	border-width: $border-width-thin;
+	border-style: solid;
+	border-color: $color-neutral-25;
+}
+
+.u-border-thick {
+	border-width: $border-width-thick;
+	border-style: solid;
+	border-color: $color-neutral-25;
+}

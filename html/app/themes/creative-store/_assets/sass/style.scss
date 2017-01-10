@@ -1,0 +1,49 @@
+/*!
+ * Theme Name: creative-store
+ * Theme URI:
+ * Author: Trinity Mirror
+ * Author URI: http://www.trinitymirror.com
+ * Description: .
+ * Version: 1.0.0
+ * License: GNU General Public License v2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: creative-store
+ * Tags: responsive
+ * This theme, like WordPress, is licensed under the GPL.
+ *
+ */
+
+/**
+ * Settings: Global variables, config switches, brand colours.
+ */
+@import 'settings/settings';
+
+/**
+ * Tools: Default mixins and functions.
+ */
+@import 'tools/tools';
+
+/**
+ * Generic: Ground-zero styles (Normalise, resets, box-sizing).
+ */
+@import 'generic/generic';
+
+/**
+ * Elements: Unclassed HTML elements.
+ */
+@import 'elements/elements';
+
+/**
+ * Objects: Undecorated design patterns. (.o-)
+ */
+@import 'objects/objects';
+
+/**
+ * Components: Designed components, chunks of UI. (.c-)
+ */
+@import 'components/components';
+
+/**
+ * Utilities: Helpers and overide (.u-)
+ */
+@import 'utilities/utilities';

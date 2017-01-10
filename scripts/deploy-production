@@ -1,0 +1,29 @@
+## Optimise
+composer install --no-dev --no-interaction
+
+# Set timestamp
+echo "Creating Time Stamp..."
+TIMESTAMP=$(date +%Y%m%d%H%M%S)
+echo $TIMESTAMP
+
+# Make a new releases folder
+echo "Creating release folder..."
+ssh $USERNAME@$HOST "mkdir $DEPLOY_TO/releases/$TIMESTAMP"
+
+# Copy files
+echo "Deploying files to production server..."
+rsync -avz -e "ssh" --exclude-from="html/app/themes/creative-store/.exclude-deploy" --exclude="app/themes/creative-store/.exclude-deploy" ~/clone/html/ $USERNAME@$HOST:$DEPLOY_TO/releases/$TIMESTAMP
+
+# Symlink shared folders
+echo "Symlinking shared folders..."
+ssh $USERNAME@$HOST "ln -s $SHARED/uploads $DEPLOY_TO/releases/$TIMESTAMP/app/uploads"
+ssh $USERNAME@$HOST "ln -s $SHARED/languages $DEPLOY_TO/releases/$TIMESTAMP/app/languages"
+
+#ssh $USERNAME@$HOST "ln -s $SHARED/logs $DEPLOY_TO/releases/$TIMESTAMP/app/logs
+
+# Update app version
+echo "Updating app to new version..."
+ssh $USERNAME@$HOST "rm -rf $CURRENT;ln -s $DEPLOY_TO/releases/$TIMESTAMP/ $CURRENT"
+
+# Cleanup
+#ssh $USERNAME@$HOST "cd $DEPLOY_TO/releases/;rm -rf `ls -t | tail -n +6`;ls -l"

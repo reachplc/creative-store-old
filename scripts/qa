@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# Quality Assurance tests
+
+echo "Test WordPress Theme..."
+cd ~/clone/html/app/themes/creative-store/
+./_scripts/qa
+cd ~/clone/

@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# Quality Assurance tests
+
+# Install coding standards
+echo "Installing coding standards..."
+./vendor/bin/phpcs --config-set installed_paths "$(pwd)/vendor/wp-coding-standards/wpcs/,$(pwd)/vendor/frenck/php-compatibility"
+./vendor/bin/phpcs --config-set colors 1
+./vendor/bin/phpcs --config-set show_progress 1
+
+# Check out code
+echo "Runing coding standards..."
+./vendor/bin/phpcs --standard="./_tests/wordpress.ruleset.xml" ./ --extensions="php" --ignore="*/node_modules,*/vendor,buddypress"
+
+echo "Runing mess detector..."
+./vendor/bin/phpmd ./ text ./_tests/phpmd.ruleset.xml --suffixes php --exclude */node_modules,*/vendor
+
+echo "Running PHP compatibility check..."
+./vendor/bin/phpcs --standard="PHPCompatibility" --exclude="PHPCompatibility.PHP.DefaultTimeZoneRequired" --runtime-set testVersion 5.6-7.0 ./ --extensions="php" --ignore="node_modules,vendor"
+
+echo "Running Front-end Tests..."
+./node_modules/grunt/bin/grunt tests
+
+echo "Running Front-end Stats..."
+./node_modules/grunt/bin/grunt stats

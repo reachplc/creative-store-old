@@ -1,0 +1,73 @@
+/**
+ * Gallery Object
+ * @example:
+		<ul class="o-gallery"">
+			<li class="o-gallery__item">
+				<img src="example.jpg" alt="">
+			</li>
+		</ul>
+ *
+ */
+
+.o-gallery {
+	display: flex;
+	position: relative;
+	flex-basis: auto;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/**
+ * [1] Display items in a 2 column layout.
+ */
+
+.o-gallery__item {
+	flex: auto;
+	width: 50%; /** [1] */
+	max-width: 50%; /** [1] */
+	margin: 0;
+	box-sizing: border-box;
+
+
+}
+
+@media (min-width: 600px) {
+
+	.o-gallery__item {
+		/** Display items in a 3 column layout. */
+		width: 33.333%;
+		max-width: 33.333%;
+	}
+
+}
+
+@media (min-width: 1000px) {
+
+	.o-gallery__item {
+		/** Display items in a 4 column layout. */
+		width: 25%;
+		max-width: 25%;
+
+	}
+
+}
+
+.o-gallery__item img {
+	max-width: 100%;
+	vertical-align: bottom;
+}
+
+
+.o-gallery__item--description {
+	position: absolute;
+	top: -10px;
+	left: 50%;
+	width: 100%;
+	max-width: 1000px;
+	padding: 30px 50px;
+	transform: translateX(-50%);
+	z-index: 2;
+}

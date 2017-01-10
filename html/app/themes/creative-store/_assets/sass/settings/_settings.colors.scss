@@ -1,0 +1,70 @@
+/**
+ * Colours Variables
+ */
+
+/**  Brand Colors. */
+
+$color-white: rgb(255, 255, 255); /** #ffffff */
+$color-black: rgb(0, 0, 0); /** #000000 */
+
+$color-neutral: rgb(128, 128, 128); /** #808080 */
+$color-neutral-10: lighten($color-neutral, 10%); /** #9a9a9a */
+$color-neutral-25: lighten($color-neutral, 25%); /** #c0c0c0 */
+$color-neutral-50: lighten($color-neutral, 50%); /** #ffffff */
+
+$color-red: rgb(255, 0, 0); /** #ff0000 */
+$color-red-10: lighten($color-red, 10%); /** #ff3333 */
+$color-red-25: lighten($color-red, 25%); /** #ff8080 */
+$color-red-50: lighten($color-red, 50%); /** #ffffff */
+
+$color-blue: rgb(0, 0, 255); /** #0000ff */
+$color-blue-10: lighten($color-blue, 10%); /** #3333ff */
+$color-blue-25: lighten($color-blue, 25%); /** #8080ff */
+$color-blue-50: lighten($color-blue, 50%); /** #ffffff */
+
+/** Interactive Colors. */
+
+$color-active: $color-red;
+$color-hover: $color-blue;
+
+/** Background Colors. */
+
+$color-background: $color-neutral-10;
+$color-background-light: $color-neutral-10;
+$color-background-dark: rgb(1, 25, 33);
+$color-background-disabled: $color-neutral-10;
+
+$color-text-screen: $color-black;
+$color-background-screen: $color-white;
+$color-background-hr: $color-neutral-25;
+$color-background-pre: rgb(238, 238, 238);
+$color-text-ins: $color-black;
+$color-background-ins: rgb(255, 249, 192);
+
+/** Text Colors. */
+
+$color-text: $color-neutral-25;
+$color-text-on-light: $color-neutral-25;
+$color-text-on-dark: $color-white;
+$color-text-light: $color-white;
+$color-text-disabled: $color-black;
+
+$color-link: $color-active;
+$color-link-on-dark: $color-white;
+$color-link-visited: $color-red;
+$color-link-hover: $color-blue;
+
+$color-text-screen: $color-blue;
+$color-text-input: $color-neutral-10;
+$color-text-input-focus: $color-text;
+
+/** Border Colors. */
+
+$color-border-button: $color-neutral-25 $color-neutral-25 rgb(187, 187, 187);
+$color-border-button-hover: $color-neutral-25 rgb(187, 187, 187) rgb(170, 170, 170);
+$color-border-button-focus: rgb(170, 170, 170) rgb(187, 187, 187) rgb(187, 187, 187);
+$color-border-input: $color-neutral-25;
+$color-border-abbr: $color-neutral-10;
+
+$color-table-background: $color-neutral-10;
+$color-table-background-hover: $color-blue;

@@ -1,0 +1,30 @@
+/**
+ * Exhibition
+ *
+ * Presentation of objects to fill the
+ * parent element's space
+ *
+ * @example:
+    <ul class="o-exhibition">
+			<li class="o-exhibition__item">
+	      <img src="example.jpg" alt="">
+      </li>
+    </ul>
+ */
+
+.o-exhibition {
+	display: flex;
+	flex-basis: auto;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.o-exhibition__item {
+	flex: auto;
+	flex-basis: auto;
+	margin: 0;
+	box-sizing: border-box;
+}

@@ -1,0 +1,112 @@
+/**
+ *  Utilities: Spacing
+ */
+
+/**
+ * Inset
+ *
+ * Inset's offer indents on all four sides of the element.
+ */
+
+.u-inset {
+	padding: $space;
+}
+
+.u-inset-xxs {
+	padding: $space-xxs;
+}
+
+.u-inset-xs {
+	padding: $space-xs;
+}
+
+.u-inset-s {
+	padding: $space-s;
+}
+
+.u-inset-m {
+	padding: $space-m;
+}
+
+.u-inset-l {
+	padding: $space-l;
+}
+
+.u-inset-xl {
+	padding: $space-xl;
+}
+
+/**
+ * Inset
+ *
+ * Inset's offer indents on all four sides of the element.
+ */
+
+.u-instack {
+	padding-top: $space;
+	padding-bottom: $space;
+}
+
+.u-instack-xxs {
+	padding-top: $space-xxs;
+	padding-bottom: $space-xxs;
+}
+
+.u-instack-xs {
+	padding-top: $space-xs;
+	padding-bottom: $space-xs;
+}
+
+.u-instack-s {
+	padding-top: $space-s;
+	padding-bottom: $space-s;
+}
+
+.u-instack-m {
+	padding-top: $space-m;
+	padding-bottom: $space-m;
+}
+
+.u-instack-l {
+	padding-top: $space-l;
+	padding-bottom: $space-l;
+}
+
+.u-instack-xl {
+	padding-top: $space-xl;
+	padding-bottom: $space-xl;
+}
+
+/**
+ * Stack
+ *
+ * Adds space below the element.
+ */
+
+.u-stack {
+	margin-bottom: $space;
+}
+
+.u-stack-xxs {
+	margin-bottom: $space-xxs;
+}
+
+.u-stack-xs {
+	margin-bottom: $space-xs;
+}
+
+.u-stack-s {
+	margin-bottom: $space-s;
+}
+
+.u-stack-m {
+	margin-bottom: $space-m;
+}
+
+.u-stack-l {
+	margin-bottom: $space-l;
+}
+
+.u-stack-xl {
+	margin-bottom: $space-xl;
+}

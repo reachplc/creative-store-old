@@ -1,0 +1,51 @@
+# Creative Store
+
+## System
+
+error_log
+.DS_Store
+
+## Server
+
+.env
+/shared/*
+access.log
+error.log
+
+## Development
+
+bin
+.vagrant
+vendor/*
+composer.lock
+
+## NodeJS
+
+node_modules/
+npm-debug.log
+
+## WordPress
+
+html/wp/*
+html/app/uploads/*
+
+### Languages
+html/app/languages/*
+
+### Plugins
+html/app/db.php
+html/app/plugins/*
+html/app/plugins-mu/*
+
+#### White-list Plugins
+!html/app/plugins/index.php
+!html/app/plugins-mu/index.php
+!html/app/plugins-mu/tm-creativestore-config.php
+
+### Themes
+.sass-cache
+html/app/themes/*
+
+#### White-list Themes
+!html/app/themes/index.php
+!html/app/themes/creative-store

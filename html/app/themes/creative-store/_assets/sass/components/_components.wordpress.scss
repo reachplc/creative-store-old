@@ -1,0 +1,60 @@
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0;
+}
+
+.byline,
+.updated:not(.published) {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 0;
+}
+
+.page-links {
+	margin: 0 0 1.5em;
+	clear: both;
+}
+
+.post {
+	width: 95%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@media (min-width: 600px) {
+
+	.post {
+		max-width: 75%;
+	}
+
+}
+
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+.widget {
+	margin: 0 0 1.5em;
+
+	/* Make sure select elements fit in widgets. */
+	select {
+		max-width: 100%;
+	}
+
+}

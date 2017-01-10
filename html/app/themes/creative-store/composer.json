@@ -1,0 +1,43 @@
+{
+	"name": "trinitymirror/creative-store",
+	"type": "wordpress-theme",
+	"license": "proprietary",
+	"description": "",
+	"homepage": "https://github.com/trinitymirror/creative-store/",
+	"support": {
+		"issues": "https://github.com/trinitymirror/creative-store/issues/",
+		"email": "tmcreative@trinitymirror.com"
+	},
+	"authors": [
+		{
+			"name": "Michael Bragg",
+			"homepage": "http://www.michaelbragg.net/",
+			"role": "Developer"
+		},
+		{
+			"name": "Daniel Richardson",
+			"role": "Designer"
+		},
+		{
+			"name": "Jonathan Masters",
+			"role": "Developer"
+		}
+	],
+	"keywords": [
+		"wordpress",
+		"composer",
+		"wp",
+		"theme"
+	],
+	"minimum-stability": "dev",
+	"require": {},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer" : "*",
+		"frenck/php-compatibility": "*",
+		"phpmd/phpmd" : "@stable",
+		"sebastian/phpcpd": "*",
+		"squizlabs/php_codesniffer": "*",
+		"simplyadmire/composer-plugins" : "@dev",
+		"wp-coding-standards/wpcs": "dev-master"
+	}
+}

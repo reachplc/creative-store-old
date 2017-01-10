@@ -1,0 +1,29 @@
+.alignleft,
+.u-align-left {
+	display: inline;
+	margin-right: 1.5em;
+	float: left;
+}
+
+.alignright,
+.u-align-right {
+	display: inline;
+	margin-left: 1.5em;
+	float: right;
+}
+
+.aligncenter,
+.u-align-center {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	clear: both;
+}
+
+/**
+ * Text Alignment
+ */
+
+.text-center {
+	text-align: center;
+}

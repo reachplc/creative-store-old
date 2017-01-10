@@ -1,0 +1,43 @@
+.c-heading-page {
+	font-size: $font-size-x-super;
+	font-weight: $font-weight-light;
+	line-height: 1.2;
+}
+
+.c-heading-page-sub {
+	font-size: $font-size-xx-large;
+}
+
+@media (min-width: 758px) {
+
+	.c-heading-page-sub {
+		font-size: $font-size-super;
+	}
+
+}
+
+.c-heading--main {
+	font-size: $font-size-xxx-large;
+	font-weight: $font-weight-light;
+}
+
+.c-heading--main a {
+	text-decoration: none;
+}
+
+.c-heading-main-sub {
+	color: $color-blue;
+	font-size: $font-size-xx-large;
+	font-weight: $font-weight-extra-bold;
+}
+
+.c-heading-main-tertiary {
+	color: $color-blue;
+	font-size: $font-size-x-large;
+	font-weight: $font-weight-bold;
+}
+
+.c-heading-section {
+	font-size: $font-size-x-large;
+	font-weight: $font-weight-light;
+}
