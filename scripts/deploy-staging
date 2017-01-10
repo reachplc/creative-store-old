@@ -16,7 +16,7 @@ rsync -avz -e "ssh" --exclude-from="html/app/themes/creative-store/.exclude-depl
 
 # Symlink shared folders
 echo "Symlinking shared folders..."
-ssh $USERNAME@$HOST "ln -s $STAGING_SHARED/uploads $STAGING_DEPLOY_TO/releases/$TIMESTAMP/app/uploads"
+ssh $USERNAME@$HOST "ln -s $STAGING_SHARED/media $STAGING_DEPLOY_TO/releases/$TIMESTAMP/media"
 ssh $USERNAME@$HOST "ln -s $STAGING_SHARED/languages $STAGING_DEPLOY_TO/releases/$TIMESTAMP/app/languages"
 
 #ssh $USERNAME@$HOST "ln -s $STAGING_SHARED/logs $STAGING_DEPLOY_TO/releases/$TIMESTAMP/app/logs
