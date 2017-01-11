@@ -93,11 +93,11 @@ add_action(
 function creative_store_enqueue_scripts() {
 
 	/** Scripts to be loaded globally. */
-	if( defined( 'CONCATENATE_SCRIPTS' ) && CONCATENATE_SCRIPTS === true ) {
+	if ( defined( 'CONCATENATE_SCRIPTS' ) && CONCATENATE_SCRIPTS === true ) {
 		wp_enqueue_script( 'creative-store-scripts-global' );
 	}
 
-	if( ! defined( 'CONCATENATE_SCRIPTS' ) || CONCATENATE_SCRIPTS === false ) {
+	if ( ! defined( 'CONCATENATE_SCRIPTS' ) || CONCATENATE_SCRIPTS === false ) {
 		wp_enqueue_script( 'creative-store-navigation' );
 		wp_enqueue_script( 'creative-store-skip-link-focus-fix' );
 	}
