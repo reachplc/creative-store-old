@@ -11,6 +11,20 @@ module.exports = function (grunt) {
       theme: '.', // <%= dir.theme %>/
     },
 
+    copy: {
+      javascript: {
+        files: [
+          {
+            expand: true,
+            cwd: '<%= dir.theme %>/_assets/js/',
+            src: '**/*.js',
+            dest: '<%= dir.theme %>/js/',
+            filter: 'isFile',
+          },
+        ],
+      },
+    },
+
     sass: {
       options: {
         sourceMap: true,
@@ -238,6 +252,7 @@ module.exports = function (grunt) {
   // Tasks
 
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -255,7 +270,7 @@ module.exports = function (grunt) {
   grunt.registerTask('stats', ['parker']);
   grunt.registerTask('tests', ['sasslint']);
   grunt.registerTask('styles', ['sass:development', 'postcss']);
-  grunt.registerTask('scripts', ['uglify:production']);
+  grunt.registerTask('scripts', ['copy:javascript', 'uglify:production']);
   grunt.registerTask('optim', ['newer:imagemin']);
   grunt.registerTask('icons', ['svgstore']);
   grunt.registerTask('dev', ['styles', 'scripts', 'icons', 'optim', 'watch']);

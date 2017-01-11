@@ -11,6 +11,14 @@
 function creative_store_register_scripts() {
 
 	wp_register_script(
+		'creative-store-scripts-global',
+		get_template_directory_uri() . '/js/global.js',
+		array(),
+		'1.0.0',
+		true
+	);
+
+	wp_register_script(
 		'creative-store-navigation',
 		get_template_directory_uri() . '/js/navigation.js',
 		array(),
@@ -85,8 +93,14 @@ add_action(
 function creative_store_enqueue_scripts() {
 
 	/** Scripts to be loaded globally. */
-	wp_enqueue_script( 'creative-store-navigation' );
-	wp_enqueue_script( 'creative-store-skip-link-focus-fix' );
+	if( defined( 'CONCATENATE_SCRIPTS' ) && CONCATENATE_SCRIPTS === true ) {
+		wp_enqueue_script( 'creative-store-scripts-global' );
+	}
+
+	if( ! defined( 'CONCATENATE_SCRIPTS' ) || CONCATENATE_SCRIPTS === false ) {
+		wp_enqueue_script( 'creative-store-navigation' );
+		wp_enqueue_script( 'creative-store-skip-link-focus-fix' );
+	}
 
 }
 

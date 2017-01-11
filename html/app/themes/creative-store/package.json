@@ -13,6 +13,7 @@
     "autoprefixer": "6.4.x",
     "cssnano": "3.7.x",
     "grunt": "1.0.x",
+    "grunt-contrib-copy": "1.0.x",
     "grunt-contrib-imagemin": "1.0.x",
     "grunt-contrib-jshint": "1.0.x",
     "grunt-contrib-uglify": "^2.0.0",
@@ -27,7 +28,7 @@
     "grunt-svgmin": "3.1.x",
     "grunt-svgstore": "1.0.x",
     "postcss-cssstats": "1.0.x",
-    "postcss-sorting": "^1.6.1",
+    "postcss-sorting": "1.6.x",
     "stylelint": "7.2.x"
   },
   "scripts": {
