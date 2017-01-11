@@ -25,12 +25,12 @@ if ( ! function_exists( 'creative_store_posted_on' ) ) :
 		);
 
 			$posted_on = sprintf(
-				esc_html_x( 'Posted on %s', 'post date', 'tm-rohe' ),
+				esc_html_x( 'Posted on %s', 'post date', 'creative-store' ),
 				'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 			);
 
 			$byline = sprintf(
-				esc_html_x( 'by %s', 'post author', 'tm-rohe' ),
+				esc_html_x( 'by %s', 'post author', 'creative-store' ),
 				'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 			);
 
@@ -47,29 +47,29 @@ if ( ! function_exists( 'cretive_store_entry_footer' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'tm-rohe' ) );
+			$categories_list = get_the_category_list( esc_html__( ', ', 'creative-store' ) );
 			if ( $categories_list && creative_store_categorized_blog() ) {
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'tm-rohe' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'creative-store' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'tm-rohe' ) );
+			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'creative-store' ) );
 			if ( $tags_list ) {
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'tm-rohe' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'creative-store' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
 
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
 			/* translators: %s: post title */
-			comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'tm-rohe' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
+			comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'creative-store' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
 			echo '</span>';
 		}
 
 		edit_post_link(
 			sprintf(
 				/* translators: %s: Name of current post */
-				esc_html__( 'Edit %s', 'tm-rohe' ),
+				esc_html__( 'Edit %s', 'creative-store' ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			),
 			'<span class="edit-link">',
@@ -144,11 +144,11 @@ function tm_rohe_get_svg( $args = array() ) {
 
 	/** Make sure $args are an array. */
 	if ( empty( $args ) ) {
-		return esc_html__( 'Please define default parameters in the form of an array.', 'tm-rohe' );
+		return esc_html__( 'Please define default parameters in the form of an array.', 'creative-store' );
 	}
 	// Define an icon.
 	if ( false === array_key_exists( 'icon', $args ) ) {
-		return esc_html__( 'Please define an SVG icon filename.', 'tm-rohe' );
+		return esc_html__( 'Please define an SVG icon filename.', 'creative-store' );
 	}
 	// Set defaults.
 	$defaults = array(

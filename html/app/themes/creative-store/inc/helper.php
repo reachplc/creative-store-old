@@ -4,7 +4,7 @@
  *
  * Functions that could do with being part of core.
  *
- * @package tm-rohe
+ * @package creative-store
  */
 
 if ( ! function_exists( 'is_post_type' ) ) :

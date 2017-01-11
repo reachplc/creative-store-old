@@ -2,7 +2,7 @@
 /**
  * All funcation to control media
  *
- * @package tm-rohe
+ * @package creative-store
  */
 
 /**

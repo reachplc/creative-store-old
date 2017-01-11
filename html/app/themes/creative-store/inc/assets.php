@@ -2,7 +2,7 @@
 /**
  * Register and load styles and scripts when required.
  *
- * @package tm-rohe
+ * @package creative-store
  */
 
 /**
@@ -11,7 +11,7 @@
 function creative_store_register_scripts() {
 
 	wp_register_script(
-		'tm-rohe-navigation',
+		'creative-store-navigation',
 		get_template_directory_uri() . '/js/navigation.js',
 		array(),
 		'1.0.0',
@@ -19,7 +19,7 @@ function creative_store_register_scripts() {
 	);
 
 	wp_register_script(
-		'tm-rohe-skip-link-focus-fix',
+		'creative-store-skip-link-focus-fix',
 		get_template_directory_uri() . '/js/skip-link-focus-fix.js',
 		array(),
 		'1.0.0',
@@ -39,7 +39,7 @@ add_action(
 function creative_store_register_styles() {
 
 	wp_register_style(
-		'creative-store',
+		'creative-store-style',
 		get_stylesheet_uri(),
 		array(),
 		'1.0.0'
@@ -85,8 +85,8 @@ add_action(
 function creative_store_enqueue_scripts() {
 
 	/** Scripts to be loaded globally. */
-	wp_enqueue_script( 'tm-rohe-navigation' );
-	wp_enqueue_script( 'tm-rohe-2016-skip-link-focus-fix' );
+	wp_enqueue_script( 'creative-store-navigation' );
+	wp_enqueue_script( 'creative-store-skip-link-focus-fix' );
 
 }
 
@@ -101,7 +101,7 @@ add_action(
  */
 function creative_store_enqueue_styles() {
 
-	wp_enqueue_style( 'creative-store' );
+	wp_enqueue_style( 'creative-store-style' );
 
 }
 
