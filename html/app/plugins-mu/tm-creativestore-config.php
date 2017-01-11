@@ -29,6 +29,7 @@ require WPMU_PLUGIN_DIR . '/wds-required-plugins/wds-required-plugins.php';
  */
 function wds_required_plugins_add( $required ) {
 	$required = array_merge( $required, array(
+		'bp-rsed/bp-rsed.php',
 		'brute-force-login-protection/brute-force-login-protection.php',
 		'buddypress/bp-loader.php',
 		'cmb2/init.php',
