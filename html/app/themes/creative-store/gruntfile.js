@@ -84,7 +84,10 @@ module.exports = function (grunt) {
     uglify: {
       production: {
         files: {
-          '<%= dir.theme %>/_assets/js/navigation.js': ['<%= dir.theme %>/js/navigation.js'],
+          '<%= dir.theme %>/js/global.js': [
+            '<%= dir.theme %>/_assets/js/navigation.js',
+            '<%= dir.theme %>/_assets/js/skip-link-focus-fix.js',
+          ],
         },
       },
     },
@@ -252,7 +255,7 @@ module.exports = function (grunt) {
   grunt.registerTask('stats', ['parker']);
   grunt.registerTask('tests', ['sasslint']);
   grunt.registerTask('styles', ['sass:development', 'postcss']);
-  grunt.registerTask('scripts', ['newer:uglify:production']);
+  grunt.registerTask('scripts', ['uglify:production']);
   grunt.registerTask('optim', ['newer:imagemin']);
   grunt.registerTask('icons', ['svgstore']);
   grunt.registerTask('dev', ['styles', 'scripts', 'icons', 'optim', 'watch']);
