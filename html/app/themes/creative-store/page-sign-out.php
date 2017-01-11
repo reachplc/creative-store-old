@@ -1,6 +1,6 @@
 <?php
 /**
- *  Template Name: Sign-Out
+ * Sign-out Template.
  *
  * @package creative-store
  */
