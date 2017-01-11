@@ -2,8 +2,8 @@
 
 style.css
 style.css.map
-/gui
-/js
+gui/*
+js/*
 
 # PHP
 /vendor
