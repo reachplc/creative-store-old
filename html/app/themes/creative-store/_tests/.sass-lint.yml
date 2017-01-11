@@ -1,6 +1,7 @@
 options:
   formatter: stylish
   merge-default-rules: false
+  max-warnings: 0
 files:
   include: '**/*.s+(a|c)ss'
 rules:
