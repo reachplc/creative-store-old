@@ -12,7 +12,7 @@ ssh $USERNAME@$HOST "mkdir $STAGING_DEPLOY_TO/releases/$TIMESTAMP"
 
 # Copy files
 echo "Deploying files to production server..."
-rsync -avz -e "ssh" --exclude="app/themes/creative-store/" ~/clone/html/ $USERNAME@$HOST:$STAGING_DEPLOY_TO/releases/$TIMESTAMP
+rsync -avz -e "ssh" --exclude="app/themes/creative-store/" --exclude="media" ~/clone/html/ $USERNAME@$HOST:$STAGING_DEPLOY_TO/releases/$TIMESTAMP
 rsync -avz -e "ssh" --exclude-from="html/app/themes/creative-store/.exclude-deploy" --exclude="app/themes/creative-store/.exclude-deploy" ~/clone/html/app/themes/creative-store/ $USERNAME@$HOST:$STAGING_DEPLOY_TO/releases/$TIMESTAMP/app/themes/creative-store/
 
 # Symlink shared folders
