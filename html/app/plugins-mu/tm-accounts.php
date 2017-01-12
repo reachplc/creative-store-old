@@ -84,3 +84,15 @@ add_action(
 	'wp_login_failed',
 	'my_front_end_login_fail'
 );
+
+/**
+ * Update WP default logout url.
+ */
+function tm_logout_url() {
+	return home_url( '/accounts/sign-out/' );;
+}
+
+add_filter(
+	'logout_url',
+	'tm_logout_url'
+);
