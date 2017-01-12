@@ -35,3 +35,22 @@ add_filter(
 	10,
 	1
 );
+
+function custom_login_page( $login_url, $redirect, $force_reauth ) {
+
+		$login_url = home_url( '/accounts/sign-in/' );
+
+		return esc_url_raw(
+			add_query_arg(
+				array( 'redirect_to' => home_url( '/accounts/' ) ),
+				$login_url
+			)
+		);
+
+}
+
+add_filter(
+	'login_url',
+	'custom_login_page',
+	10, 3
+);
