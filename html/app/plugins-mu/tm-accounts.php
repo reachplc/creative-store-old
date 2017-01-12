@@ -40,12 +40,21 @@ function custom_login_page( $login_url, $redirect, $force_reauth ) {
 
 		$login_url = home_url( '/accounts/sign-in/' );
 
-		return esc_url_raw(
-			add_query_arg(
-				array( 'redirect_to' => home_url( '/accounts/' ) ),
+		if ( ! empty( $redirect ) ) {
+			$login_url = add_query_arg(
+				array( 'redirect_to'	=> urlencode( $redirect ) ),
 				$login_url
-			)
-		);
+			);
+		}
+
+		if ( $force_reauth ) {
+			$login_url	= add_query_arg(
+				array( 'reauth'	=> '1' ),
+				$login_url
+			);
+		}
+
+		return esc_url_raw( $login_url );
 
 }
 
