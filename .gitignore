@@ -41,6 +41,7 @@ html/app/plugins-mu/*
 !html/app/plugins/index.php
 !html/app/plugins-mu/index.php
 !html/app/plugins-mu/tm-creativestore-config.php
+!html/app/plugins-mu/tm-accounts.php
 
 ### Themes
 .sass-cache
