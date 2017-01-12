@@ -61,6 +61,7 @@
     "wpackagist-plugin/bp-rsed": "1.0.*",
     "wpackagist-plugin/buddypress": "2.7.x",
     "wpackagist-plugin/brute-force-login-protection": "1.5.x",
+    "wpackagist-plugin/wp-force-login": "5.0.*",
     "wpackagist-plugin/wp-mail-smtp": "0.10.x",
     "wpackagist-plugin/wp-robots-txt": "1.1.x",
     "wpackagist-plugin/safe-redirect-manager": "1.7.x",
