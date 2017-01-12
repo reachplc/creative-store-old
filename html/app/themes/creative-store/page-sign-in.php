@@ -27,8 +27,8 @@ get_header(); ?>
 					<?php printf(
 						'<p>%1$s <a href="%2$s">%3$s</a></p>',
 						esc_html__( 'Not got an account?', 'creative-store' ),
-						esc_url( home_url( 'accounts/create/' ) ),
-						esc_html__( 'Click here to create an account.', 'creative-store' )
+						esc_url( wp_registration_url() ),
+						esc_html__( 'Click here to create your account.', 'creative-store' )
 					); ?>
 
 				</section>
@@ -94,6 +94,15 @@ get_header(); ?>
 				</form>
 
 				</article>
+
+				<section>
+					<?php printf(
+						'<p><a href="%1$s" title="%2$s">%3$s</a></p>',
+						esc_url( wp_lostpassword_url( get_permalink() ) ),
+						esc_html__( 'Forgot Password', 'creative-store' ),
+						esc_html__( 'Forgot your Password?')
+					); ?>
+				</section>
 
 		</main><!-- #main -->
 
