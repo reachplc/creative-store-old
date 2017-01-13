@@ -24,7 +24,7 @@ get_header(); ?>
 
 				<section>
 
-					<?php _e(
+					<?php esc_html_e(
 						'Please enter your username or email address. You will receive a link to create a new password via email.',
 						'creative-store'
 					); ?>
@@ -36,7 +36,7 @@ get_header(); ?>
 					<div class="c-field">
 
 						<label class="c-field__label" for="user_login">
-							<?php _e( 'Username or E-mail', 'creative-store' ); ?>
+							<?php esc_html_e( 'Username or E-mail', 'creative-store' ); ?>
 						</label>
 
 						<div class="c-field__input">
@@ -49,7 +49,7 @@ get_header(); ?>
 
 						<div class="c-field__input">
 							<input type="submit" name="submit" class="btn"
-							value="<?php _e( 'Get New Password', 'creative-store' ); ?>">
+							value="<?php esc_html_e( 'Get New Password', 'creative-store' ); ?>">
 						</div>
 
 					</div>
