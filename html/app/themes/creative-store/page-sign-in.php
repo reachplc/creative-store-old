@@ -100,7 +100,7 @@ get_header(); ?>
 						'<p><a href="%1$s" title="%2$s">%3$s</a></p>',
 						esc_url( wp_lostpassword_url( get_permalink() ) ),
 						esc_html__( 'Forgot Password', 'creative-store' ),
-						esc_html__( 'Forgot your Password?')
+						esc_html__( 'Forgot your Password?' )
 					); ?>
 				</section>
 
