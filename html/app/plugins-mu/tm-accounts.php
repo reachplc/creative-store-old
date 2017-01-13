@@ -23,10 +23,11 @@
  * @return array An array of URLs. Must be absolute.
  */
 function my_forcelogin_whitelist( $whitelist ) {
-  $whitelist[]	= home_url( '/accounts/sign-in/' );
+	$whitelist[]	= home_url( '/accounts/sign-in/' );
 	$whitelist[]	= home_url( '/accounts/create/' );
 	$whitelist[]	= home_url( '/accounts/activate/' );
-  return $whitelist;
+	$whitelist[]	= home_url( '/accounts/reset-password/' );
+	return $whitelist;
 }
 
 add_filter(
@@ -95,4 +96,22 @@ function tm_logout_url() {
 add_filter(
 	'logout_url',
 	'tm_logout_url'
+);
+
+/**
+ * Update WP default lost password url.
+ */
+function tm_lost_password_url( $lostpassword_url ) {
+
+	$lostpassword_url = home_url( '/accounts/reset-password/' );
+
+	return $lostpassword_url;
+
+}
+
+add_filter(
+	'lostpassword_url',
+	'tm_lost_password_url',
+	1000,
+	1
 );
