@@ -65,6 +65,7 @@
     "wpackagist-plugin/wp-mail-smtp": "0.10.x",
     "wpackagist-plugin/wp-robots-txt": "1.1.x",
     "wpackagist-plugin/safe-redirect-manager": "1.7.x",
+    "wpackagist-theme/storefront": "2.1.*",
     "wpackagist-plugin/stream": "3.1.x",
     "wpackagist-plugin/woocommerce": "2.6.x"
   },
