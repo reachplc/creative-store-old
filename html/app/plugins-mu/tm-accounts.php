@@ -20,13 +20,18 @@
 /**
  * Filter Force Login to allow exceptions for specific URLs.
  *
- * @return array An array of URLs. Must be absolute.
+ * @param  array $whitelist     Force Login Plugin's white list.
+ *
+ * @return array                An array of URLs. Must be absolute.
  */
 function my_forcelogin_whitelist( $whitelist ) {
+
 	$whitelist[]	= home_url( '/accounts/sign-in/' );
 	$whitelist[]	= home_url( '/accounts/create/' );
 	$whitelist[]	= home_url( '/accounts/activate/' );
-	$whitelist[]	= home_url( '/accounts/reset-password/' );
+	$whitelist[]	= home_url( '/my-account/' );
+	$whitelist[]	= home_url( '/my-account/lost-password/' );
+
 	return $whitelist;
 }
 
@@ -37,22 +42,35 @@ add_filter(
 	1
 );
 
+/**
+ * [custom_login_page description]
+ *
+ * @param  string $login_url    Default WordPress login url.
+ * @param  string $redirect     Page to redirect the user to once complete.
+ * @param  tbc    $force_reauth TBC.
+ *
+ * @return string               Plugin define url to use.
+ */
 function custom_login_page( $login_url, $redirect, $force_reauth ) {
 
 		$login_url = home_url( '/accounts/sign-in/' );
 
 		if ( ! empty( $redirect ) ) {
-			$login_url = add_query_arg(
-				array( 'redirect_to'	=> urlencode( $redirect ) ),
-				$login_url
-			);
+		$login_url = add_query_arg(
+		array(
+		'redirect_to'	=> rawurlencode( $redirect ),
+		),
+		$login_url
+	);
 		}
 
 		if ( $force_reauth ) {
-			$login_url	= add_query_arg(
-				array( 'reauth'	=> '1' ),
-				$login_url
-			);
+		$login_url	= add_query_arg(
+		array(
+		'reauth'	=> '1',
+		),
+		$login_url
+	);
 		}
 
 		return esc_url_raw( $login_url );
@@ -66,31 +84,43 @@ add_filter(
 );
 
 /**
- * Redirect failed login to referrer page
+ * Redirect failed login to referrer page.
  */
+function tm_front_end_login_fail() {
 
-function my_front_end_login_fail( $username ) {
 	/** Check if referer is present. */
-	if ( isset( $_SERVER['HTTP_REFERER'] ) ) {
-		$referrer = esc_url( $_SERVER['HTTP_REFERER'] );
+	if ( isset( $_SERVER['HTTP_REFERER'] ) ) { // Input var okay.
+		$referrer = filter_var(
+			wp_unslash( $_SERVER['HTTP_REFERER'] ), // Input var okay.
+			FILTER_SANITIZE_URL
+		);
 	}
+
 	/** If there's a valid referrer, and it's not the default log-in screen. */
-	if ( ! empty( $referrer ) && ! strstr( $referrer,'wp-login' ) && ! strstr( $referrer,'wp-admin' ) ) {
-		wp_redirect( esc_url_raw( add_query_arg( array( 'status' => 'failed' ), $referrer ) ) );
-		exit;
+	if ( ! empty( $referrer ) && ! strstr( $referrer, 'wp-login' ) && ! strstr( $referrer, 'wp-admin' ) ) {
+		wp_safe_redirect(
+			esc_url_raw(
+				add_query_arg(
+					array( 'login' => 'failed' ),
+					$referrer
+				)
+			)
+		);
+		return;
 	}
+
 }
 
 add_action(
 	'wp_login_failed',
-	'my_front_end_login_fail'
+	'tm_front_end_login_fail'
 );
 
 /**
  * Update WP default logout url.
  */
 function tm_logout_url() {
-	return home_url( '/accounts/sign-out/' );;
+	return home_url( '/accounts/sign-out/' );
 }
 
 add_filter(
@@ -99,19 +129,50 @@ add_filter(
 );
 
 /**
- * Update WP default lost password url.
+ * Check if login fields are empty.
+ *
+ * @param  null|WP_User|WP_Error $user     The user's progress.
+ * @param  string                $username                The user's username.
+ * @param  string                $password                The user's password.
+ *
+ * @return WP_User|WP_Error                WP_User object if authenticating the user or, if generating an error, a WP_Error object.
  */
-function tm_lost_password_url( $lostpassword_url ) {
+function tm_check_username_password( $user, $username, $password ) {
 
-	$lostpassword_url = home_url( '/accounts/reset-password/' );
+	/** Check if referer is present. */
+	if ( isset( $_SERVER['HTTP_REFERER'] ) ) { // Input var okay.
+		$referrer = filter_var(
+			wp_unslash( $_SERVER['HTTP_REFERER'] ), // Input var okay.
+			FILTER_SANITIZE_URL
+		);
+	}
 
-	return $lostpassword_url;
+	/** If there's a valid referrer, and it's not the default log-in screen. */
+	if ( ! empty( $referrer ) && ! strstr( $referrer, 'wp-login' ) && ! strstr( $referrer, 'wp-admin' ) ) {
+
+		if ( '' === $username || '' === $password ) {
+
+			wp_safe_redirect(
+				esc_url_raw(
+					add_query_arg(
+						array( 'login' => 'empty' ),
+						$referrer
+					)
+				)
+			);
+
+			return;
+
+		}
+	}
+
+	return $user;
 
 }
 
-add_filter(
-	'lostpassword_url',
-	'tm_lost_password_url',
-	1000,
-	1
+add_action(
+	'authenticate',
+	'tm_check_username_password',
+	1,
+	3
 );
