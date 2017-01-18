@@ -18,22 +18,6 @@ function creative_store_register_scripts() {
 		true
 	);
 
-	wp_register_script(
-		'creative-store-navigation',
-		get_template_directory_uri() . '/js/navigation.js',
-		array(),
-		'1.0.0',
-		true
-	);
-
-	wp_register_script(
-		'creative-store-skip-link-focus-fix',
-		get_template_directory_uri() . '/js/skip-link-focus-fix.js',
-		array(),
-		'1.0.0',
-		true
-	);
-
 }
 add_action(
 	'wp_enqueue_scripts',
@@ -93,14 +77,7 @@ add_action(
 function creative_store_enqueue_scripts() {
 
 	/** Scripts to be loaded globally. */
-	if ( defined( 'CONCATENATE_SCRIPTS' ) && CONCATENATE_SCRIPTS === true ) {
-		wp_enqueue_script( 'creative-store-scripts-global' );
-	}
-
-	if ( ! defined( 'CONCATENATE_SCRIPTS' ) || CONCATENATE_SCRIPTS === false ) {
-		wp_enqueue_script( 'creative-store-navigation' );
-		wp_enqueue_script( 'creative-store-skip-link-focus-fix' );
-	}
+	wp_enqueue_script( 'creative-store-scripts-global' );
 
 }
 
@@ -115,6 +92,12 @@ add_action(
  */
 function creative_store_enqueue_styles() {
 
+	if ( is_child_theme() ) {
+		global $storefront_version;
+		wp_enqueue_style( 'storefront-style', get_template_directory_uri() . '/style.css', '', $storefront_version );
+		wp_style_add_data( 'storefront-style', 'rtl', 'replace' );
+	}
+
 	wp_enqueue_style( 'creative-store-style' );
 
 }
@@ -124,20 +107,6 @@ add_action(
 	'creative_store_enqueue_styles',
 	100
 );
-
-/**
- * Dequeue Contact Form 7 if not on the contact page.
- */
-function creative_store_exclude_contact() {
-
-}
-
-add_action(
-	'wp_print_styles',
-	'creative_store_exclude_contact',
-	100
-);
-
 
 /**
  * Add SVG definitions to footer.
