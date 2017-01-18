@@ -39,6 +39,7 @@ html/app/plugins-mu/*
 
 #### White-list Plugins
 !html/app/plugins/index.php
+!html/app/plugins/ti-admin.php
 !html/app/plugins-mu/index.php
 !html/app/plugins-mu/tm-creativestore-config.php
 !html/app/plugins-mu/tm-accounts.php
