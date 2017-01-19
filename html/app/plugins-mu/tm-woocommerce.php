@@ -16,3 +16,17 @@
  * @license      GPL-2.0+
  * @link         https://www.github.com/trinitymirror/creative-store/
  */
+
+/**
+ * Change the text on the add to cart button.
+ *
+ * @return	string	New text to be shown.
+ */
+function tm_cart_button_text() {
+	return __( 'Reserve', 'tm-woocommerce' );
+}
+
+add_filter(
+	'woocommerce_product_single_add_to_cart_text',
+	'tm_cart_button_text'
+);
