@@ -30,3 +30,33 @@ add_filter(
 	'woocommerce_product_single_add_to_cart_text',
 	'tm_cart_button_text'
 );
+
+
+/**
+ * Remove prices from products.
+ *
+ * @param		[type]	$price	[description]
+ *
+ * @return	string        	New price value.
+ */
+function tm_remove_prices( $price ) {
+	$price = '';
+	return $price;
+}
+
+add_filter(
+	'woocommerce_variable_sale_price_html',
+	'tm_remove_prices',
+	10
+);
+
+add_filter(
+	'woocommerce_variable_price_html',
+	'tm_remove_prices',
+	10
+);
+
+add_filter(
+	'woocommerce_get_price_html',
+	'tm_remove_prices', 10
+);
