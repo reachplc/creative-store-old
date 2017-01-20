@@ -60,3 +60,17 @@ add_filter(
 	'woocommerce_get_price_html',
 	'tm_remove_prices', 10
 );
+
+/**
+ * Remove footer credit.
+ *
+ * @return bool Return no content.
+ */
+function tm_remove_footer_credit() {
+	return false;
+}
+
+add_filter(
+	'storefront_credit_link',
+	'tm_remove_footer_credit'
+);
