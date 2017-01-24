@@ -13,7 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  Trinity Mirror
  * @package creative-store
- * @version 1.0.0
+ * @version 2.3.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
