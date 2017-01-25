@@ -74,3 +74,16 @@ add_filter(
 	'storefront_credit_link',
 	'tm_remove_footer_credit'
 );
+
+/**
+ * Layout for cart link in header.
+ *
+ * @return [type] [description]
+ */
+function storefront_cart_link() {
+?>
+	<a class="cart-contents" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'storefront' ); ?>">
+		<span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'storefront' ), WC()->cart->get_cart_contents_count() ) );?></span>
+	</a>
+<?php
+}
