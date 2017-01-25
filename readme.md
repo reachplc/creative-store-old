@@ -26,13 +26,36 @@ of artwork being requested.
 
 ## On-boarding – Getting Started
 
+### Setup your development environment
+
+This section assumes you have Git and "**A**pache **M**ySql **P**HP" (such as WAMP, [MAMP](https://www.mamp.info/en/mamp-pro/) or [VirtualBox](https://www.virtualbox.org/) and [Vagrant](https://www.vagrantup.com/)) set up. You may need to adjust as needed for your local development environment.
+
+Clone this repository into your development area and change into its directory:
+
+```
+git clone https://github.com/trinitymirror/creative-store.git creative-store
+cd creative-store
+
+```
+Copy the example.env file, rename it to .env and update any details to suit your local development environment.
+
+```
+cp ./example.env ./.env
+```
+
+Install the project's dependencies via Composer.
+
+```
+composer install
+```
+
+Import a pre-build database or run the WordPress installer.
+
 ### Testing Your Changes
 
 Our test suite is run on every commit pushed to this repository.
 
 ### Updating WordPress and Plugins
-
-To upgrade to the latest versions of WordPress or its plugins re-provision Vagrant by running `vagrant provision` from your command line.
 
 Upgrading dependencies to a MAJOR or MINOR version will require manually updating the `require` and `require-dev` sections of the `composer.json` file and updating composer.
 
