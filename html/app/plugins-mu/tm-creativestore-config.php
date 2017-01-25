@@ -140,3 +140,49 @@ add_action(
 	'init',
 	'disable_wp_emojicons'
 );
+
+/**
+ * Remove unwanted dashboard widgets.
+ */
+function tm_remove_dashboard_widgets() {
+
+	global $wp_meta_boxes;
+
+	/** Quick Draft. */
+	unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press'] );
+
+	/** Recent Comments. */
+	unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments'] );
+
+	/** WordPress News. */
+	unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_primary'] );
+
+}
+
+add_action(
+	'wp_dashboard_setup',
+	'tm_remove_dashboard_widgets'
+);
+
+/**
+ * Reflectionmove WooCommerce Dashboard Widgets.
+ */
+function tm_remove_woocommerce_dashboard_widgets() {
+	/** WooCommerce Recent Reviews.*/
+	remove_meta_box(
+		'woocommerce_dashboard_recent_reviews',
+		'dashboard',
+		'normal'
+	);
+}
+add_action(
+	'wp_user_dashboard_setup',
+	'tm_remove_woocommerce_dashboard_widgets',
+	20
+);
+
+add_action(
+	'wp_dashboard_setup',
+	'tm_remove_woocommerce_dashboard_widgets',
+	20
+);
