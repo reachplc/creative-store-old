@@ -35,7 +35,7 @@ add_filter(
 /**
  * Remove prices from products.
  *
- * @param		[type]	$price	[description]
+ * @param		string $price  Price Value.
  *
  * @return	string        	New price value.
  */
@@ -77,8 +77,6 @@ add_filter(
 
 /**
  * Layout for cart link in header.
- *
- * @return [type] [description]
  */
 function storefront_cart_link() {
 ?>
