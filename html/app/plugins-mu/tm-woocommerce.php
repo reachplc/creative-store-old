@@ -87,3 +87,39 @@ function storefront_cart_link() {
 	</a>
 <?php
 }
+
+
+/**
+ * Remove billing fields from checkout.
+ *
+ * @param  array $fields Default fields.
+ *
+ * @return array         Modified fields.
+ */
+function tm_override_checkout_fields( $fields ) {
+
+	unset( $fields['billing']['billing_first_name'] );
+	unset( $fields['billing']['billing_last_name'] );
+	unset( $fields['billing']['billing_company'] );
+	unset( $fields['billing']['billing_address_1'] );
+	unset( $fields['billing']['billing_address_2'] );
+	unset( $fields['billing']['billing_city'] );
+	unset( $fields['billing']['billing_postcode'] );
+	unset( $fields['billing']['billing_country'] );
+	unset( $fields['billing']['billing_state'] );
+	unset( $fields['billing']['billing_phone'] );
+	unset( $fields['billing']['billing_address_2'] );
+	unset( $fields['billing']['billing_postcode'] );
+	unset( $fields['billing']['billing_company'] );
+	unset( $fields['billing']['billing_last_name'] );
+	unset( $fields['billing']['billing_email'] );
+	unset( $fields['billing']['billing_city'] );
+
+	return $fields;
+
+}
+
+add_filter(
+	'woocommerce_checkout_fields',
+	'tm_override_checkout_fields'
+);
