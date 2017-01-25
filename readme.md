@@ -22,6 +22,7 @@ of artwork being requested.
     - [BuddyPress](https://buddypress.org/)
 - MySQL
 - NodeJS
+  - [Sass](https://github.com/sass/node-sass/)
 
 ## On-boarding – Getting Started
 
