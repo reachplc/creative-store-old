@@ -18,6 +18,26 @@
  */
 
 /**
+ * Get users selected region(s).
+ *
+ * @return	string|array		List of regions from extended profile.
+ */
+function tm_get_user_region() {
+
+	if ( ! is_user_logged_in() ) {
+		return false;
+	}
+
+	$region = xprofile_get_field_data(
+		'Region',
+		bp_loggedin_user_id(),
+		'array'
+	);
+
+	return $region;
+}
+
+/**
  * Change the text on the add to cart button.
  *
  * @return	string	New text to be shown.
