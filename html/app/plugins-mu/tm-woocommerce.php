@@ -28,14 +28,58 @@ function tm_get_user_region() {
 		return false;
 	}
 
+	// Get users region from Extended Profile.
 	$region = xprofile_get_field_data(
 		'Region',
 		bp_loggedin_user_id(),
 		'array'
 	);
 
+	// Convert to lowercase.
+	$region = strtolower( $region );
+
+	// Convert spaces to hyphens.
+	$region = preg_replace( '/\s+/', '-', $region );
+
 	return $region;
+
 }
+
+/**
+ * Remove product if not in stock for users region.
+ *
+ * @param		bool $is_visible     Is product visible by default.
+ * @param		int  $product_id     Product Id.
+ *
+ * @return	bool		           	Should Product be visible.
+ */
+function tm_remove_product_stock_region( $is_visible, $product_id ) {
+
+	$product_variable = new WC_Product_Variable( $product_id );
+		$product_variations = $product_variable->get_available_variations();
+
+		foreach ( $product_variations as $variation ) {
+
+		/** Get users region. */
+		$user_region = tm_get_user_region();
+
+		/** Get products regions. */
+		$product_region = $variation['attributes']['attribute_pa_regions'];
+
+		if ( $user_region === $product_region  && ! $variation['is_in_stock'] ) {
+			$is_visible = false;
+			}
+}
+
+	return $is_visible;
+}
+
+add_filter(
+	'woocommerce_product_is_visible',
+	'tm_remove_product_stock_region',
+	10,
+	2
+);
 
 /**
  * Change the text on the add to cart button.
