@@ -106,6 +106,19 @@ add_action(
 );
 
 /**
+ * Removes products count after categories name.
+ */
+function tm_remove_category_products_count() {
+	return;
+}
+
+add_filter(
+	'woocommerce_subcategory_count_html',
+	'tm_remove_category_products_count'
+);
+
+
+/**
  * Change the text on the add to cart button.
  *
  * @return	string	New text to be shown.
