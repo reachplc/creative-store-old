@@ -82,6 +82,30 @@ add_filter(
 );
 
 /**
+ *  Remove the result count from WooCommerce.
+ */
+function tm_remove_result_count() {
+
+remove_action(
+	'woocommerce_after_shop_loop',
+	'woocommerce_result_count',
+	20
+);
+
+remove_action(
+	'woocommerce_before_shop_loop',
+	'woocommerce_result_count',
+	20
+);
+
+}
+
+add_action(
+	'init',
+	'tm_remove_result_count'
+);
+
+/**
  * Change the text on the add to cart button.
  *
  * @return	string	New text to be shown.
