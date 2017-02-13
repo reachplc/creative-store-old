@@ -18,36 +18,36 @@ $border-alert: 1px !default;
 
 .c-alert {
 	position: relative;
-	background-color: lighten( $color-alert, 40% );
-	border: $border-alert solid lighten( $color-alert, 25% );
-	}
+	border: $border-alert solid lighten($color-alert, 25%);
+	background-color: lighten($color-alert, 40%);
+}
 
 .c-alert p {
 	margin-bottom: 0;
 }
 
 .c-alert--positive {
-	background-color: lighten( $color-alert-positive, 40% );
-	border-color: lighten( $color-alert-positive, 25% );
+	border-color: lighten($color-alert-positive, 25%);
+	background-color: lighten($color-alert-positive, 40%);
 	color: $color-alert-positive;
 }
 
 .c-alert--info {
-	color: $color-alert-info;
+	border-color: lighten($color-alert-info, 25%);
 	background-color: lighten($color-alert-info, 40%);
-	border-color: lighten( $color-alert-info, 25% );
+	color: $color-alert-info;
 }
 
 .c-alert--warning {
+	border-color: lighten($color-alert-warning, 25%);
+	background-color: lighten($color-alert-warning, 40%);
 	color: $color-alert-warning;
-	background-color: lighten( $color-alert-warning, 40% );
-	border-color: lighten( $color-alert-warning, 25% );
 }
 
 .c-alert--danger {
+	border-color: lighten($color-alert-danger, 25%);
+	background-color: lighten($color-alert-danger, 40%);
 	color: $color-alert-danger;
-	background-color: lighten( $color-alert-danger, 40% );
-	border-color: lighten( $color-alert-danger, 25% );
 }
 
 /**
