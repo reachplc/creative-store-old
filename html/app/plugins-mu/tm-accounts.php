@@ -28,6 +28,7 @@ function my_forcelogin_whitelist( $whitelist ) {
 
 	$whitelist[]	= home_url( '/accounts/' );
 	$whitelist[]	= home_url( '/accounts/sign-in/' );
+	$whitelist[]	= home_url( '/accounts/sign-out' );
 	$whitelist[]	= home_url( '/accounts/create/' );
 	$whitelist[]	= home_url( '/accounts/activate/' );
 	$whitelist[]	= home_url( '/accounts/lost-password/' );
