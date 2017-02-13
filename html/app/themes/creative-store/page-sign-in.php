@@ -11,7 +11,7 @@ if ( is_user_logged_in() ) {
 }
 
 /** Check if the login failed. */
-$login_status = ( get_query_var( 'status' ) === 'failed' ? true : false );
+$login_status = ( get_query_var( 'login' ) === 'failed' ? true : false );
 
 get_header(); ?>
 
@@ -33,19 +33,19 @@ get_header(); ?>
 
 				</section>
 
-				<?php if ( true === $login_status ) : ?>
-					<section class="alert alert--message alert--warning alert--type box" role="alert">
-						<p>
-						<?php printf(
-							'<strong>%1$s</strong> %2$s</p>',
-							esc_html__( 'Ooops.', 'creative-store' ),
-							esc_html__( 'Incorrect username or password. Please try again.', 'creative-store' )
-						); ?>
-						</p>
-					</section>
-				<?php endif; ?>
-
 				<form id="member-login" action="<?php echo esc_url( home_url( 'wp-login.php' ) ); ?>" method="POST" enctype="multipart/form-data">
+
+					<?php if ( true === $login_status ) : ?>
+						<section class="c-alert c-alert--message c-alert--warning c-alert--type u-stack-l" role="alert">
+							<p>
+							<?php printf(
+								'<strong>%1$s</strong> %2$s',
+								esc_html__( 'Ooops.', 'creative-store' ),
+								esc_html__( 'Incorrect username or password. Please try again.', 'creative-store' )
+							); ?>
+							</p>
+						</section>
+					<?php endif; ?>
 
 					<fieldset id="account-details">
 

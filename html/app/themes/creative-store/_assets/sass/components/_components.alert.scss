@@ -1,0 +1,57 @@
+/**
+ * Alert Message
+ * Example:
+    <section class="c-alert c-alert--message c-alert--type">
+      <a class="c-alert__close" href="#0">×</a>
+      <p><strong>Ooops</strong> We need to notify you about an issue.</p>
+    </section>
+ *
+ */
+.c-alert {
+  position: relative;
+  background: #ccc;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid #666;
+  }
+
+  .c-alert p {
+    margin-bottom: 0;
+  }
+
+  .c-alert--positive {
+    background: #e8f5f9;
+    border-color: #81c784;
+    color: #4caf50;
+    letter-spacing: -0.5px;
+  }
+
+	.c-alert--info {
+		color: #31708f;
+		background-color: #d9edf7;
+		border-color: #bcdff1;
+	}
+
+	.c-alert--danger {
+		color: #a94442;
+		background-color: #f2dede;
+		border-color: #ebcccc;
+	}
+
+	.c-alert--warning {
+		color: #8a6d3b;
+		background-color: #fcf8e3;
+		border-color: #faf2cc;
+	}
+
+/**
+ * Position the close button
+ */
+.c-alert__close {
+  position: absolute;
+  top: 0;
+  right: 14.5px;
+}
+
+.c-alert--message {
+  padding: 14.5px;
+}

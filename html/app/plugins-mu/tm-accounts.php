@@ -43,6 +43,23 @@ add_filter(
 );
 
 /**
+ * Add login to acceptable query vars.
+ *
+ * @param		array		$vars			Default WordPress query vars.
+ *
+ * @return	array							Updated query vars.
+ */
+function add_login_query_var( $vars ){
+	$vars[] = 'login';
+	return $vars;
+}
+
+add_filter(
+	'query_vars',
+	'add_login_query_var'
+);
+
+/**
  * [custom_login_page description]
  *
  * @param  string $login_url    Default WordPress login url.
