@@ -1,57 +1,64 @@
 /**
  * Alert Message
  * Example:
-    <section class="c-alert c-alert--message c-alert--type">
-      <a class="c-alert__close" href="#0">×</a>
-      <p><strong>Ooops</strong> We need to notify you about an issue.</p>
-    </section>
+		<section class="c-alert c-alert--message c-alert--type">
+			<a class="c-alert__close" href="#0">×</a>
+			<p><strong>Ooops</strong> We need to notify you about an issue.</p>
+		</section>
  *
  */
+
+$color-alert: hsl(0, 0%, 20%) !default;
+$color-alert-positive: hsl(122, 39%, 49%) !default;
+$color-alert-info: hsl(200, 49%, 38%) !default;
+$color-alert-warning: hsl(38, 40%, 39%) !default;
+$color-alert-danger: hsl(1, 44%, 46%) !default;
+
+$border-alert: 1px !default;
+
 .c-alert {
-  position: relative;
-  background: #ccc;
-  background: rgba(0,0,0,0.25);
-  border: 1px solid #666;
-  }
-
-  .c-alert p {
-    margin-bottom: 0;
-  }
-
-  .c-alert--positive {
-    background: #e8f5f9;
-    border-color: #81c784;
-    color: #4caf50;
-    letter-spacing: -0.5px;
-  }
-
-	.c-alert--info {
-		color: #31708f;
-		background-color: #d9edf7;
-		border-color: #bcdff1;
+	position: relative;
+	background-color: lighten( $color-alert, 40% );
+	border: $border-alert solid lighten( $color-alert, 25% );
 	}
 
-	.c-alert--danger {
-		color: #a94442;
-		background-color: #f2dede;
-		border-color: #ebcccc;
-	}
+.c-alert p {
+	margin-bottom: 0;
+}
 
-	.c-alert--warning {
-		color: #8a6d3b;
-		background-color: #fcf8e3;
-		border-color: #faf2cc;
-	}
+.c-alert--positive {
+	background-color: lighten( $color-alert-positive, 40% );
+	border-color: lighten( $color-alert-positive, 25% );
+	color: $color-alert-positive;
+}
+
+.c-alert--info {
+	color: $color-alert-info;
+	background-color: lighten($color-alert-info, 40%);
+	border-color: lighten( $color-alert-info, 25% );
+}
+
+.c-alert--warning {
+	color: $color-alert-warning;
+	background-color: lighten( $color-alert-warning, 40% );
+	border-color: lighten( $color-alert-warning, 25% );
+}
+
+.c-alert--danger {
+	color: $color-alert-danger;
+	background-color: lighten( $color-alert-danger, 40% );
+	border-color: lighten( $color-alert-danger, 25% );
+}
 
 /**
  * Position the close button
  */
 .c-alert__close {
-  position: absolute;
-  top: 0;
-  right: 14.5px;
+	position: absolute;
+	top: 0;
+	right: 14.5px;
 }
 
 .c-alert--message {
-  padding: 14.5px;
+	padding: 14.5px;
 }
