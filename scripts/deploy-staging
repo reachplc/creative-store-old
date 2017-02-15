@@ -20,7 +20,7 @@ echo "Symlink shared folders..."
 ssh $USERNAME@$HOST "ln -s $STAGING_SHARED/media $STAGING_DEPLOY_TO/releases/$TIMESTAMP/media"
 ssh $USERNAME@$HOST "ln -s $STAGING_SHARED/languages $STAGING_DEPLOY_TO/releases/$TIMESTAMP/app/languages"
 
-#ssh $USERNAME@$HOST "ln -s $STAGING_SHARED/logs $STAGING_DEPLOY_TO/releases/$TIMESTAMP/app/logs
+#ssh $USERNAME@$HOST "ln -s $STAGING_SHARED/logs $STAGING_DEPLOY_TO/releases/$TIMESTAMP/app/logs"
 
 # Update app version
 echo "Updating app to new version..."
