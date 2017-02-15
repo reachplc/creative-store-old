@@ -28,7 +28,7 @@ ssh $USERNAME@$HOST "rm -rf $STAGING_CURRENT;ln -s $STAGING_DEPLOY_TO/releases/$
 
 # Record release timestamp
 echo "Record successful release"
-ssh $USERNAME@$HOST "echo $TIMESTAMP >> $STAGING_DEPLOY_TO/releases/releases.log"
+ssh $USERNAME@$HOST "echo $STAGING_DEPLOY_TO/releases/$TIMESTAMP >> $STAGING_DEPLOY_TO/releases/releases.log"
 
 # Cleanup
 #ssh $USERNAME@$HOST "cd $STAGING_DEPLOY_TO/releases/;rm -rf `ls -t | tail -n +6`;ls -l"
