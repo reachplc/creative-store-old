@@ -75,7 +75,6 @@
     "phpmd/phpmd" : "@stable",
     "sebastian/phpcpd": "*",
     "squizlabs/php_codesniffer": "*",
-    "simplyadmire/composer-plugins" : "@dev",
     "wp-coding-standards/wpcs": "dev-master",
     "wpackagist-plugin/wordpress-importer": "*",
     "wpackagist-plugin/debug-bar": "*",
